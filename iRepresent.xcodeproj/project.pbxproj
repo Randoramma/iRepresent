@@ -9,11 +9,17 @@
 /* Begin PBXBuildFile section */
 		D08756C21B07B569007E6392 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D08756C11B07B569007E6392 /* main.m */; };
 		D08756C51B07B569007E6392 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D08756C41B07B569007E6392 /* AppDelegate.m */; };
-		D08756C81B07B569007E6392 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D08756C71B07B569007E6392 /* ViewController.m */; };
 		D08756CB1B07B569007E6392 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D08756C91B07B569007E6392 /* Main.storyboard */; };
 		D08756CD1B07B569007E6392 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08756CC1B07B569007E6392 /* Images.xcassets */; };
 		D08756D01B07B569007E6392 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08756CE1B07B569007E6392 /* LaunchScreen.xib */; };
 		D08756DC1B07B569007E6392 /* iRepresentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D08756DB1B07B569007E6392 /* iRepresentTests.m */; };
+		D0EDBE5F1B0A3AA2009DAF2F /* LoginScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDBE5E1B0A3AA2009DAF2F /* LoginScreenViewController.m */; };
+		D0EDBE621B0A3AB7009DAF2F /* NewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDBE611B0A3AB7009DAF2F /* NewUserViewController.m */; };
+		D0EDBE651B0A3AD9009DAF2F /* FeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDBE641B0A3AD9009DAF2F /* FeedTableViewController.m */; };
+		D0EDBE681B0A3B04009DAF2F /* FeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDBE671B0A3B04009DAF2F /* FeedTableViewCell.m */; };
+		D0EDBE6B1B0A3B24009DAF2F /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDBE6A1B0A3B24009DAF2F /* DetailViewController.m */; };
+		D0EDBE6E1B0A3B45009DAF2F /* Oauth.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDBE6D1B0A3B45009DAF2F /* Oauth.m */; };
+		D0EDBE751B0A3CD7009DAF2F /* JSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDBE741B0A3CD7009DAF2F /* JSONParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,16 +36,29 @@
 		D08756BC1B07B569007E6392 /* iRepresent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRepresent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08756C01B07B569007E6392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D08756C11B07B569007E6392 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D08756C31B07B569007E6392 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D08756C41B07B569007E6392 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D08756C61B07B569007E6392 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D08756C71B07B569007E6392 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D08756C31B07B569007E6392 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = iRepresent/AppDelegate.h; sourceTree = "<group>"; };
+		D08756C41B07B569007E6392 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = iRepresent/AppDelegate.m; sourceTree = "<group>"; };
 		D08756CA1B07B569007E6392 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D08756CC1B07B569007E6392 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D08756CC1B07B569007E6392 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = iRepresent/Images.xcassets; sourceTree = "<group>"; };
 		D08756CF1B07B569007E6392 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D08756D51B07B569007E6392 /* iRepresentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iRepresentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08756DA1B07B569007E6392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D08756DB1B07B569007E6392 /* iRepresentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iRepresentTests.m; sourceTree = "<group>"; };
+		D0EDBE5D1B0A3AA2009DAF2F /* LoginScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginScreenViewController.h; sourceTree = "<group>"; };
+		D0EDBE5E1B0A3AA2009DAF2F /* LoginScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginScreenViewController.m; sourceTree = "<group>"; };
+		D0EDBE601B0A3AB7009DAF2F /* NewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserViewController.h; sourceTree = "<group>"; };
+		D0EDBE611B0A3AB7009DAF2F /* NewUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewUserViewController.m; sourceTree = "<group>"; };
+		D0EDBE631B0A3AD9009DAF2F /* FeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedTableViewController.h; sourceTree = "<group>"; };
+		D0EDBE641B0A3AD9009DAF2F /* FeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewController.m; sourceTree = "<group>"; };
+		D0EDBE661B0A3B04009DAF2F /* FeedTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedTableViewCell.h; sourceTree = "<group>"; };
+		D0EDBE671B0A3B04009DAF2F /* FeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedTableViewCell.m; sourceTree = "<group>"; };
+		D0EDBE691B0A3B24009DAF2F /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		D0EDBE6A1B0A3B24009DAF2F /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		D0EDBE6C1B0A3B45009DAF2F /* Oauth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Oauth.h; sourceTree = "<group>"; };
+		D0EDBE6D1B0A3B45009DAF2F /* Oauth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Oauth.m; sourceTree = "<group>"; };
+		D0EDBE731B0A3CD7009DAF2F /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
+		D0EDBE741B0A3CD7009DAF2F /* JSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONParser.m; sourceTree = "<group>"; };
+		D0EDBE761B0A3D27009DAF2F /* protected.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = protected.h; path = ../protected.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +82,9 @@
 		D08756B31B07B569007E6392 = {
 			isa = PBXGroup;
 			children = (
+				D0EDBE721B0A3C3B009DAF2F /* Controller */,
+				D0EDBE711B0A3C2B009DAF2F /* View */,
+				D0EDBE6F1B0A3C0F009DAF2F /* Model */,
 				D08756BE1B07B569007E6392 /* iRepresent */,
 				D08756D81B07B569007E6392 /* iRepresentTests */,
 				D08756BD1B07B569007E6392 /* Products */,
@@ -81,13 +103,6 @@
 		D08756BE1B07B569007E6392 /* iRepresent */ = {
 			isa = PBXGroup;
 			children = (
-				D08756C31B07B569007E6392 /* AppDelegate.h */,
-				D08756C41B07B569007E6392 /* AppDelegate.m */,
-				D08756C61B07B569007E6392 /* ViewController.h */,
-				D08756C71B07B569007E6392 /* ViewController.m */,
-				D08756C91B07B569007E6392 /* Main.storyboard */,
-				D08756CC1B07B569007E6392 /* Images.xcassets */,
-				D08756CE1B07B569007E6392 /* LaunchScreen.xib */,
 				D08756BF1B07B569007E6392 /* Supporting Files */,
 			);
 			path = iRepresent;
@@ -96,6 +111,7 @@
 		D08756BF1B07B569007E6392 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D0EDBE761B0A3D27009DAF2F /* protected.h */,
 				D08756C01B07B569007E6392 /* Info.plist */,
 				D08756C11B07B569007E6392 /* main.m */,
 			);
@@ -117,6 +133,46 @@
 				D08756DA1B07B569007E6392 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0EDBE6F1B0A3C0F009DAF2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0EDBE731B0A3CD7009DAF2F /* JSONParser.h */,
+				D0EDBE741B0A3CD7009DAF2F /* JSONParser.m */,
+				D08756C31B07B569007E6392 /* AppDelegate.h */,
+				D08756C41B07B569007E6392 /* AppDelegate.m */,
+				D0EDBE6C1B0A3B45009DAF2F /* Oauth.h */,
+				D0EDBE6D1B0A3B45009DAF2F /* Oauth.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D0EDBE711B0A3C2B009DAF2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D08756C91B07B569007E6392 /* Main.storyboard */,
+				D08756CC1B07B569007E6392 /* Images.xcassets */,
+				D08756CE1B07B569007E6392 /* LaunchScreen.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D0EDBE721B0A3C3B009DAF2F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D0EDBE691B0A3B24009DAF2F /* DetailViewController.h */,
+				D0EDBE6A1B0A3B24009DAF2F /* DetailViewController.m */,
+				D0EDBE661B0A3B04009DAF2F /* FeedTableViewCell.h */,
+				D0EDBE671B0A3B04009DAF2F /* FeedTableViewCell.m */,
+				D0EDBE631B0A3AD9009DAF2F /* FeedTableViewController.h */,
+				D0EDBE641B0A3AD9009DAF2F /* FeedTableViewController.m */,
+				D0EDBE601B0A3AB7009DAF2F /* NewUserViewController.h */,
+				D0EDBE611B0A3AB7009DAF2F /* NewUserViewController.m */,
+				D0EDBE5D1B0A3AA2009DAF2F /* LoginScreenViewController.h */,
+				D0EDBE5E1B0A3AA2009DAF2F /* LoginScreenViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +275,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D08756C81B07B569007E6392 /* ViewController.m in Sources */,
+				D0EDBE6E1B0A3B45009DAF2F /* Oauth.m in Sources */,
 				D08756C51B07B569007E6392 /* AppDelegate.m in Sources */,
+				D0EDBE5F1B0A3AA2009DAF2F /* LoginScreenViewController.m in Sources */,
+				D0EDBE6B1B0A3B24009DAF2F /* DetailViewController.m in Sources */,
 				D08756C21B07B569007E6392 /* main.m in Sources */,
+				D0EDBE751B0A3CD7009DAF2F /* JSONParser.m in Sources */,
+				D0EDBE681B0A3B04009DAF2F /* FeedTableViewCell.m in Sources */,
+				D0EDBE621B0A3AB7009DAF2F /* NewUserViewController.m in Sources */,
+				D0EDBE651B0A3AD9009DAF2F /* FeedTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +312,7 @@
 				D08756CA1B07B569007E6392 /* Base */,
 			);
 			name = Main.storyboard;
+			path = iRepresent;
 			sourceTree = "<group>";
 		};
 		D08756CE1B07B569007E6392 /* LaunchScreen.xib */ = {
@@ -258,6 +321,7 @@
 				D08756CF1B07B569007E6392 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = iRepresent;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -352,6 +416,7 @@
 				INFOPLIST_FILE = iRepresent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -362,6 +427,7 @@
 				INFOPLIST_FILE = iRepresent/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -418,6 +484,7 @@
 				D08756E11B07B569007E6392 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D08756E21B07B569007E6392 /* Build configuration list for PBXNativeTarget "iRepresentTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +493,7 @@
 				D08756E41B07B569007E6392 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
