@@ -7,6 +7,13 @@
 //
 
 #import "FeedTableViewController.h"
+#import "FeedTableViewCell.h"
+
+@interface FeedTableViewController ()
+
+
+
+@end
 
 @implementation FeedTableViewController
 
