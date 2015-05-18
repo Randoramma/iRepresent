@@ -8,6 +8,18 @@
 
 #import "NewUserViewController.h"
 
+@interface NewUserViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *userEmailTextField;
+@property (weak, nonatomic) IBOutlet UITextField *userUsernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *userPasswordTextField;
+
+@end
+
+
 @implementation NewUserViewController
+
+
+- (IBAction)createButtonPressed:(id)sender {
+}
 
 @end

@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="User Login" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email address Here." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CPs-My-S19">
-                                <rect key="frame" x="140" y="284" width="320" height="30"/>
+                                <rect key="frame" x="206" y="284" width="188" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -39,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4X-j3-HAP">
-                                <rect key="frame" x="270" y="322" width="76" height="20"/>
+                                <rect key="frame" x="262" y="322" width="76" height="20"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Password">
                                         <attributes>
@@ -52,15 +52,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password here." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q6i-kj-hd0">
-                                <rect key="frame" x="140" y="350" width="320" height="30"/>
+                                <rect key="frame" x="221" y="350" width="158" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="KCLS Logo" translatesAutoresizingMaskIntoConstraints="NO" id="yZn-ug-zcG">
-                                <rect key="frame" x="253" y="138" width="94" height="96"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4d-w0-5v0" userLabel="Login Button">
-                                <rect key="frame" x="196" y="414" width="234" height="26"/>
+                                <rect key="frame" x="183" y="414" width="234" height="26"/>
                                 <state key="normal" image="Login Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -69,7 +66,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8UP-cY-bgQ" userLabel="New User Button">
-                                <rect key="frame" x="196" y="480" width="234" height="26"/>
+                                <rect key="frame" x="183" y="480" width="234" height="26"/>
                                 <state key="normal" image="Create New USer Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -78,31 +75,30 @@
                                     <segue destination="kQ2-zs-coi" kind="show" id="g7T-51-Vzs"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KCLS Logo" translatesAutoresizingMaskIntoConstraints="NO" id="yZn-ug-zcG">
+                                <rect key="frame" x="253" y="140" width="94" height="96"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8UP-cY-bgQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="180" id="2nI-MG-Ec3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="CPs-My-S19" secondAttribute="trailing" constant="124" id="FVZ-uE-a3S"/>
                             <constraint firstItem="xB5-8K-2c7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="GRO-Vt-09t"/>
-                            <constraint firstItem="q6i-kj-hd0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="124" id="N1U-Jr-m2M"/>
                             <constraint firstItem="CPs-My-S19" firstAttribute="top" secondItem="qLG-oz-wS2" secondAttribute="bottom" constant="8" id="NVS-TL-bzZ"/>
+                            <constraint firstAttribute="centerX" secondItem="yZn-ug-zcG" secondAttribute="centerX" id="R20-MU-LRT"/>
                             <constraint firstItem="B4X-j3-HAP" firstAttribute="top" secondItem="CPs-My-S19" secondAttribute="bottom" constant="8" id="RhL-Ll-YVh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="B4X-j3-HAP" secondAttribute="trailing" constant="238" id="UHY-D3-XJx"/>
+                            <constraint firstAttribute="centerX" secondItem="8UP-cY-bgQ" secondAttribute="centerX" id="Rmg-MV-lsj"/>
+                            <constraint firstAttribute="centerX" secondItem="qLG-oz-wS2" secondAttribute="centerX" id="Ubg-f7-7Bc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xB5-8K-2c7" secondAttribute="trailing" constant="-16" id="Utq-lY-SsJ"/>
-                            <constraint firstItem="Q4d-w0-5v0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="180" id="VvV-Y9-lv9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="8UP-cY-bgQ" secondAttribute="trailing" constant="154" id="WR7-BC-rSB"/>
                             <constraint firstItem="8UP-cY-bgQ" firstAttribute="top" secondItem="Q4d-w0-5v0" secondAttribute="bottom" constant="40" id="XQT-SG-EuV"/>
-                            <constraint firstItem="B4X-j3-HAP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="254" id="Yba-Ke-Aw3"/>
                             <constraint firstItem="Q4d-w0-5v0" firstAttribute="top" secondItem="q6i-kj-hd0" secondAttribute="bottom" constant="34" id="a2w-0T-WP3"/>
-                            <constraint firstItem="qLG-oz-wS2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="263" id="gdW-wp-ul6"/>
-                            <constraint firstItem="CPs-My-S19" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="124" id="kSy-4q-Ovm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qLG-oz-wS2" secondAttribute="trailing" constant="262" id="kgB-uA-ioZ"/>
+                            <constraint firstAttribute="centerX" secondItem="q6i-kj-hd0" secondAttribute="centerX" id="fkg-0I-HrI"/>
+                            <constraint firstAttribute="centerX" secondItem="Q4d-w0-5v0" secondAttribute="centerX" id="gaL-1S-Rul"/>
+                            <constraint firstAttribute="centerX" secondItem="CPs-My-S19" secondAttribute="centerX" id="jcV-NG-dk8"/>
                             <constraint firstItem="xB5-8K-2c7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="ndW-yG-ibe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Q4d-w0-5v0" secondAttribute="trailing" constant="154" id="rw3-ge-FYY"/>
+                            <constraint firstAttribute="centerX" secondItem="B4X-j3-HAP" secondAttribute="centerX" id="ojo-bY-hhw"/>
                             <constraint firstItem="qLG-oz-wS2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="236" id="tKJ-Mi-xgd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xB5-8K-2c7" secondAttribute="bottom" id="u0b-4U-VqA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="q6i-kj-hd0" secondAttribute="trailing" constant="124" id="w8e-hj-HVT"/>
                             <constraint firstItem="q6i-kj-hd0" firstAttribute="top" secondItem="B4X-j3-HAP" secondAttribute="bottom" constant="8" id="yNQ-p5-0Dc"/>
+                            <constraint firstItem="yZn-ug-zcG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="120" id="yyB-qc-hLq"/>
                         </constraints>
                     </view>
                     <connections>
@@ -129,16 +125,73 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iRepresent Background" translatesAutoresizingMaskIntoConstraints="NO" id="WmF-31-tyb">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User E-mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78C-FQ-aRf">
+                                <rect key="frame" x="255" y="154" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMu-XU-SL9">
+                                <rect key="frame" x="233" y="256" width="135" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ys-Of-Vf6">
+                                <rect key="frame" x="234" y="363" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter user email." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Rp-0c-T84">
+                                <rect key="frame" x="235" y="183" width="130" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter you username." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I4k-pZ-Ljr">
+                                <rect key="frame" x="223" y="285" width="155" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter password." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r1r-10-FXy">
+                                <rect key="frame" x="237" y="392" width="126" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBc-Cz-5Hc">
+                                <rect key="frame" x="260" y="470" width="81" height="25"/>
+                                <state key="normal" backgroundImage="Create New User">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createButtonPressed:" destination="x1e-cs-ecC" eventType="touchUpInside" id="J5g-aX-WTG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6Rp-0c-T84" firstAttribute="top" secondItem="78C-FQ-aRf" secondAttribute="bottom" constant="8" id="1FH-j8-3Ss"/>
+                            <constraint firstItem="r1r-10-FXy" firstAttribute="top" secondItem="1Ys-Of-Vf6" secondAttribute="bottom" constant="8" id="2Bd-Wx-9gF"/>
                             <constraint firstItem="XcL-KL-rD1" firstAttribute="top" secondItem="WmF-31-tyb" secondAttribute="bottom" id="3zj-eo-FlB"/>
+                            <constraint firstAttribute="centerX" secondItem="78C-FQ-aRf" secondAttribute="centerX" id="3zs-Hh-4fh"/>
+                            <constraint firstItem="6Rp-0c-T84" firstAttribute="top" secondItem="78C-FQ-aRf" secondAttribute="bottom" constant="8" id="4H0-4d-mTa"/>
+                            <constraint firstItem="wMu-XU-SL9" firstAttribute="top" secondItem="6Rp-0c-T84" secondAttribute="bottom" constant="43" id="5kk-aJ-gAo"/>
+                            <constraint firstItem="DBc-Cz-5Hc" firstAttribute="top" secondItem="r1r-10-FXy" secondAttribute="bottom" constant="48" id="7DV-xt-KBD"/>
                             <constraint firstAttribute="bottomMargin" secondItem="WmF-31-tyb" secondAttribute="bottom" id="ABe-CW-W6N"/>
                             <constraint firstItem="WmF-31-tyb" firstAttribute="top" secondItem="JE2-2N-fO2" secondAttribute="topMargin" id="ADI-4W-0ty"/>
+                            <constraint firstAttribute="centerX" secondItem="DBc-Cz-5Hc" secondAttribute="centerX" id="Av0-bh-tVC"/>
+                            <constraint firstAttribute="centerX" secondItem="I4k-pZ-Ljr" secondAttribute="centerX" id="DQN-xV-n74"/>
+                            <constraint firstItem="1Ys-Of-Vf6" firstAttribute="top" secondItem="I4k-pZ-Ljr" secondAttribute="bottom" constant="48" id="Gdg-at-F53"/>
+                            <constraint firstAttribute="centerX" secondItem="1Ys-Of-Vf6" secondAttribute="centerX" id="QD0-MU-f3W"/>
+                            <constraint firstAttribute="centerX" secondItem="6Rp-0c-T84" secondAttribute="centerX" id="W8l-sb-BEt"/>
                             <constraint firstItem="WmF-31-tyb" firstAttribute="top" secondItem="JE2-2N-fO2" secondAttribute="topMargin" constant="-20" id="Wfy-sK-08f"/>
                             <constraint firstItem="WmF-31-tyb" firstAttribute="trailing" secondItem="JE2-2N-fO2" secondAttribute="trailingMargin" constant="-16" id="kKq-dp-m5G"/>
+                            <constraint firstAttribute="centerX" secondItem="r1r-10-FXy" secondAttribute="centerX" id="lA2-7N-6oi"/>
+                            <constraint firstAttribute="centerX" secondItem="wMu-XU-SL9" secondAttribute="centerX" id="mTw-4k-OeK"/>
                             <constraint firstItem="WmF-31-tyb" firstAttribute="leading" secondItem="JE2-2N-fO2" secondAttribute="leadingMargin" constant="-16" id="mc1-yV-xZI"/>
+                            <constraint firstItem="I4k-pZ-Ljr" firstAttribute="top" secondItem="wMu-XU-SL9" secondAttribute="bottom" constant="8" id="nyL-BN-34X"/>
                             <constraint firstItem="WmF-31-tyb" firstAttribute="trailing" secondItem="JE2-2N-fO2" secondAttribute="trailingMargin" constant="16" id="oDJ-ns-rRP"/>
+                            <constraint firstItem="78C-FQ-aRf" firstAttribute="top" secondItem="JjU-YK-Qik" secondAttribute="bottom" constant="90" id="oZM-r1-Kdy"/>
                             <constraint firstItem="WmF-31-tyb" firstAttribute="leading" secondItem="JE2-2N-fO2" secondAttribute="leadingMargin" constant="-16" id="reX-eh-IVD"/>
                         </constraints>
                         <variation key="default">
@@ -151,6 +204,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Euk-tz-3xF"/>
+                    <connections>
+                        <outlet property="userEmailTextField" destination="6Rp-0c-T84" id="CO8-bN-tSz"/>
+                        <outlet property="userPasswordTextField" destination="r1r-10-FXy" id="UxC-Os-dVv"/>
+                        <outlet property="userUsernameTextField" destination="I4k-pZ-Ljr" id="mav-zi-qX6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agi-Gu-fqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -177,6 +235,7 @@
     </scenes>
     <resources>
         <image name="Create New USer Button" width="234" height="26"/>
+        <image name="Create New User" width="81" height="25"/>
         <image name="KCLS Logo" width="94" height="96"/>
         <image name="Login Button" width="234" height="26"/>
         <image name="iRepresent Background" width="375" height="667"/>
