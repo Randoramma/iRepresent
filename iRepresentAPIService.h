@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+@class AFNetworking;
 
 @interface iRepresentAPIService : NSObject
-+(void) postNewUser: (NSString *)theName withPassword: (NSString *)thePassword withEmail: (NSString *)theEmail withPostUserResponse: (void (^)(NSString *))response;
++(void) postNewUser: (NSString *)theName withPassword: (NSString *)thePassword withEmail: (NSString *)theEmail response: (void (^)(NSString *))completionHandler;
 
 @end

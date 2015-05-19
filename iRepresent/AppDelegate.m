@@ -18,7 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
-  [JSONParser getUserIssues];
+  //[JSONParser getUserIssues];
+  
+  
   return YES;
 }
 

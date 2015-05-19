@@ -52,7 +52,7 @@
 @implementation JSONParser
 //:(NSData *)jsonDATA
 +(Issue *)getUserIssues {
-  NSString *filePath = [[NSBundle mainBundle]pathForResource:@"get-user-issues-success" ofType:@"json"];
+  NSString *filePath = [[NSBundle mainBundle]pathForResource:@"get-user-issues-fail" ofType:@"json"];
   
   if (!filePath) {
     
