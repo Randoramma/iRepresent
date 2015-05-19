@@ -1,0 +1,7 @@
+{
+    "success": false,
+    "message": "User with same email address already exists.",
+    "data": {
+        "id": 13
+    }
+}

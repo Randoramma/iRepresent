@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Issue.h"
 
 @interface JSONParser : NSObject
+
++(Issue *) getUserIssues;
+
++(void) postUserIssue: (Issue *)theIssue;
 
 @end
