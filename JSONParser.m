@@ -52,7 +52,8 @@
 @implementation JSONParser
 //:(NSData *)jsonDATA
 +(Issue *)getUserIssues {
-  NSString *filePath = [[NSBundle mainBundle]pathForResource:@"get-user-issues-fail" ofType:@"json"];
+#warning Enter in the heroku url to make the call to for the issues array.
+  NSString *filePath = [[NSBundle mainBundle]pathForResource:@"get-user-issues-success" ofType:@"json"];
   
   if (!filePath) {
     

@@ -15,11 +15,20 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
   //[JSONParser getUserIssues];
   
+  // make a NSuserfaults object.
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  // get the NSUserDefaults Key.
+  NSString *myKey = [userDefaults stringForKey:@"token"];
+  
+  if (myKey) {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *feedVC = [storyboard instantiateViewControllerWithIdentifier:@"FeedVC"];
+    self.window.rootViewController = feedVC;
+  }
   
   return YES;
 }

@@ -24,22 +24,23 @@
   
   self.userEmailTextField.delegate = self;
   self.userPasswordTextField.delegate = self;
-  self.userUsernameTextField.delegate = self; 
-//  self.tapGestureRecoginzer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard:)];
-//  [self.view addGestureRecognizer:self.tapGestureRecoginzer];
+  self.userUsernameTextField.delegate = self;
+ 
 }
 
 
 - (IBAction)createButtonPressed:(id)sender {
   [iRepresentAPIService postNewUser:self.userUsernameTextField.text withPassword:self.userPasswordTextField.text withEmail:self.userEmailTextField.text response:^(NSString *status) {
-    
+    // NSLog(@"%@", )
     if ([status  isEqual: @"200"]) {
-      UIAlertView *successUserPosted = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"You now need to login to post through the login page." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+      UIAlertView *successUserPosted = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"You now directed to the feed page." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+      
+#warning "this is where we set the key.  This needs to be paired with a token.  
+       NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+      [userDefaults setObject:@"Your text here" forKey:@"StringKey"];
+      [userDefaults synchronize];
       
       [successUserPosted show];
-      
-      
-      
     } else {
       
       UIAlertView *failedUserPosted = [[UIAlertView alloc] initWithTitle:@"Error posting user." message:@"User unsuccessfully posted to server" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -64,6 +65,22 @@
     [self.userPasswordTextField resignFirstResponder];
   }
   return true;
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+  if (textField == self.userEmailTextField) {
+    self.userEmailTextField.keyboardType = UIKeyboardTypeEmailAddress;
+  }
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+  if (buttonIndex == 1) {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *feedVC = [storyboard instantiateViewControllerWithIdentifier:@"FeedVC"];
+    // present view controller.
+    [self presentViewController:feedVC animated:true completion:nil];
+  }
 }
 
 
