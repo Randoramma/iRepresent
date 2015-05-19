@@ -1,5 +1,5 @@
 //
-//  JSONParser.h
+//  Issue.h
 //  iRepresent
 //
 //  Created by Randy McLain on 5/18/15.
@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JSONParser : NSObject
+@interface Issue : NSObject
 
-+(void) getUserIssues
 @end
