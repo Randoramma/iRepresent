@@ -13,6 +13,7 @@
 		D07372F01B0AD9DB009C4F9C /* post-users-fail.json in Resources */ = {isa = PBXBuildFile; fileRef = D07372EB1B0AD9DB009C4F9C /* post-users-fail.json */; };
 		D07372F11B0AD9DB009C4F9C /* post-users-success.json in Resources */ = {isa = PBXBuildFile; fileRef = D07372EC1B0AD9DB009C4F9C /* post-users-success.json */; };
 		D07372F41B0ADAF9009C4F9C /* Issue.m in Sources */ = {isa = PBXBuildFile; fileRef = D07372F31B0ADAF9009C4F9C /* Issue.m */; };
+		D07372F71B0ADB72009C4F9C /* iRepresentAPIService.m in Sources */ = {isa = PBXBuildFile; fileRef = D07372F61B0ADB72009C4F9C /* iRepresentAPIService.m */; };
 		D08756C21B07B569007E6392 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D08756C11B07B569007E6392 /* main.m */; };
 		D08756C51B07B569007E6392 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D08756C41B07B569007E6392 /* AppDelegate.m */; };
 		D08756CB1B07B569007E6392 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D08756C91B07B569007E6392 /* Main.storyboard */; };
@@ -46,6 +47,8 @@
 		D07372EC1B0AD9DB009C4F9C /* post-users-success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "post-users-success.json"; sourceTree = "<group>"; };
 		D07372F21B0ADAF9009C4F9C /* Issue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Issue.h; sourceTree = "<group>"; };
 		D07372F31B0ADAF9009C4F9C /* Issue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Issue.m; sourceTree = "<group>"; };
+		D07372F51B0ADB72009C4F9C /* iRepresentAPIService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRepresentAPIService.h; sourceTree = "<group>"; };
+		D07372F61B0ADB72009C4F9C /* iRepresentAPIService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRepresentAPIService.m; sourceTree = "<group>"; };
 		D08756BC1B07B569007E6392 /* iRepresent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRepresent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08756C01B07B569007E6392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D08756C11B07B569007E6392 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 		D0EDBE6F1B0A3C0F009DAF2F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D07372F51B0ADB72009C4F9C /* iRepresentAPIService.h */,
+				D07372F61B0ADB72009C4F9C /* iRepresentAPIService.m */,
 				D07372F21B0ADAF9009C4F9C /* Issue.h */,
 				D07372F31B0ADAF9009C4F9C /* Issue.m */,
 				D0EDBE731B0A3CD7009DAF2F /* JSONParser.h */,
@@ -310,6 +315,7 @@
 				D07372F41B0ADAF9009C4F9C /* Issue.m in Sources */,
 				D0EDBE621B0A3AB7009DAF2F /* NewUserViewController.m in Sources */,
 				D0EDBE651B0A3AD9009DAF2F /* FeedTableViewController.m in Sources */,
+				D07372F71B0ADB72009C4F9C /* iRepresentAPIService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
