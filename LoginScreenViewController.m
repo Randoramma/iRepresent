@@ -18,15 +18,11 @@
 @end
 
 
-
-
-
-
-
-
 @implementation LoginScreenViewController
 
 -(void)viewDidAppear:(BOOL)animated {
+  self.emailTextField.delegate = self;
+  self.passwordTextField.delegate = self;
   
   
 }
