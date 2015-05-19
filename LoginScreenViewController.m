@@ -9,7 +9,7 @@
 #import "LoginScreenViewController.h"
 
 
-@interface LoginScreenViewController ()
+@interface LoginScreenViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -30,10 +30,16 @@
 
 @implementation LoginScreenViewController
 
-- (IBAction)loginPressed:(id)sender {
+-(void)viewDidAppear:(BOOL)animated {
+  
+  
+}
+-(void)viewWillAppear:(BOOL)animated {
+  [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
-- (IBAction)newUserPressed:(id)sender {
+-(void)viewWillDisappear:(BOOL)animated {
+  [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 
