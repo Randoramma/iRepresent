@@ -8,7 +8,6 @@
 
 #import "FeedTableViewController.h"
 #import "FeedTableViewCell.h"
-#import "FeedTableViewCell.h"
 #import "JSONParser.h"
 #import "iRepresentAPIService.h"
 
@@ -22,13 +21,20 @@
 @implementation FeedTableViewController
 
 -(void)viewDidLoad {
-  
-  
+  self.tableView.delegate = self;
+  self.tableView.dataSource = self;
   
 }
 
--(void)segueBack:(id)sender {
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  
+  return 10;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  FeedTableViewCell *theCell;
   
   
+  return theCell;
 }
 @end

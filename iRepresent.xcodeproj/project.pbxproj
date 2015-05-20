@@ -20,6 +20,7 @@
 		D08756CD1B07B569007E6392 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D08756CC1B07B569007E6392 /* Images.xcassets */; };
 		D08756D01B07B569007E6392 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08756CE1B07B569007E6392 /* LaunchScreen.xib */; };
 		D08756DC1B07B569007E6392 /* iRepresentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D08756DB1B07B569007E6392 /* iRepresentTests.m */; };
+		D0A62A751B0D081700839788 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A62A741B0D081700839788 /* FeedCell.xib */; };
 		D0EDBE5F1B0A3AA2009DAF2F /* LoginScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDBE5E1B0A3AA2009DAF2F /* LoginScreenViewController.m */; };
 		D0EDBE621B0A3AB7009DAF2F /* NewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDBE611B0A3AB7009DAF2F /* NewUserViewController.m */; };
 		D0EDBE651B0A3AD9009DAF2F /* FeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDBE641B0A3AD9009DAF2F /* FeedTableViewController.m */; };
@@ -63,6 +64,7 @@
 		D08756D51B07B569007E6392 /* iRepresentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iRepresentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D08756DA1B07B569007E6392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D08756DB1B07B569007E6392 /* iRepresentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iRepresentTests.m; sourceTree = "<group>"; };
+		D0A62A741B0D081700839788 /* FeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 		D0EDBE5D1B0A3AA2009DAF2F /* LoginScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginScreenViewController.h; sourceTree = "<group>"; };
 		D0EDBE5E1B0A3AA2009DAF2F /* LoginScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginScreenViewController.m; sourceTree = "<group>"; };
 		D0EDBE601B0A3AB7009DAF2F /* NewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserViewController.h; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 		D0EDBE711B0A3C2B009DAF2F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D0A62A741B0D081700839788 /* FeedCell.xib */,
 				D08756C91B07B569007E6392 /* Main.storyboard */,
 				D08756CC1B07B569007E6392 /* Images.xcassets */,
 				D08756CE1B07B569007E6392 /* LaunchScreen.xib */,
@@ -306,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A62A751B0D081700839788 /* FeedCell.xib in Resources */,
 				D07372EE1B0AD9DB009C4F9C /* get-user-issues-success.json in Resources */,
 				D08756CB1B07B569007E6392 /* Main.storyboard in Resources */,
 				D07372F11B0AD9DB009C4F9C /* post-users-success.json in Resources */,
