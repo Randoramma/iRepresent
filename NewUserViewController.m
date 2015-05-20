@@ -69,10 +69,8 @@
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
   if (buttonIndex == 1) {
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UINavigationController *feedVC = [storyboard instantiateViewControllerWithIdentifier:@"FeedVC"];
-    // present view controller.
-    [self presentViewController:feedVC animated:true completion:nil];
+    [self performSegueWithIdentifier:@"createdToFeedSegue" sender:self];
+    // load data from current view controller to settingVC
   }
 }
 

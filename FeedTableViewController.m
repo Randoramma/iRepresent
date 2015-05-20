@@ -8,6 +8,10 @@
 
 #import "FeedTableViewController.h"
 #import "FeedTableViewCell.h"
+#import "FeedTableViewCell.h"
+#import "JSONParser.h"
+#import "iRepresentAPIService.h"
+
 
 @interface FeedTableViewController ()
 
@@ -18,8 +22,6 @@
 @implementation FeedTableViewController
 
 -(void)viewDidLoad {
-  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:2 target:self action:@selector(segueBack)];
-  
   
   
   

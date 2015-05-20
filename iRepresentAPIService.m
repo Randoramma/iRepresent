@@ -52,13 +52,11 @@
 +(void) userLogin: (NSString *)theEmail withPassword:(NSString *)thePassword response:(void (^) (NSString *))completionHandler {
 
   // <un>:<pw>@<host>:<port>/sign_in
-  NSString *baseURL = [NSString stringWithFormat:@"https://%@:%@@irepresent.herokuapp.com:80", theEmail, thePassword];
+  NSString *baseURL = [NSString stringWithFormat:@"http://irepresent.herokuapp.com"];
   NSString *theHTTPString = [NSString stringWithFormat:@"%@/sign_in", baseURL];
   AFHTTPRequestOperationManager *manager= [AFHTTPRequestOperationManager manager];
-  manager.requestSerializer = [AFJSONRequestSerializer serializer];
-  NSDictionary *params = @{@"password:": thePassword,
-                           @"email:": theEmail};
   
+  [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:theEmail password:thePassword];
   [manager GET:theHTTPString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     NSLog(@"JSON: %@", responseObject);
     NSString *token = [JSONParser postUserResponse:responseObject];
@@ -68,15 +66,24 @@
     UIAlertView *successUserPosted = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"You now directed to the feed page." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
     
     [successUserPosted show];
-    
-    
+
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     
     
     NSLog(@"Error: %@", error);
   }];
  
+} // userLogin
+
++(void) feedRequestwithToken: (NSString *)theToken withRequestedFeed: (NSString *)theFeed response:(NSArray *(^) (NSString *)) completionHandler {
+  
+  
+  
+ 
+  
 }
+                       
+
 
 
 @end

@@ -36,25 +36,24 @@
 } // viewWillDisappear
 
 - (IBAction)loginPressed:(id)sender {
-  
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  // get the NSUserDefaults Key.
+  NSString *myKey = [userDefaults stringForKey:@"token"];
  [iRepresentAPIService userLogin:self.emailTextField.text withPassword:self.passwordTextField.text response:^(NSString *status) {
+   NSLog(@"it worked"); 
    
-   if ([status  isEqual: @"200"]) {
-     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-     UIViewController *feedVC = [storyboard instantiateViewControllerWithIdentifier:@"FeedVC"];
-     // present view controller.
-     [self presentViewController:feedVC animated:true completion:nil];
+   }]; // response
+   if (myKey) {
+#warning As time permits, add in the call for login to the server determining if key is valid.  
+     [self performSegueWithIdentifier:@"verifiedToFeedSegue" sender:self];
+     // load data from current view controller to settingVC
      
-     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-     [userDefaults setObject:@"Your text here" forKey:@"StringKey"];
-     [userDefaults synchronize];
-
    } else {
-     
+
      UIAlertView *failedUserPosted = [[UIAlertView alloc] initWithTitle:@"Error posting user." message:@"User unsuccessfully posted to server, try creating a user." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
      [failedUserPosted show];
    }
- }]; // response
+
 
 } // loginPressed
 
@@ -71,6 +70,11 @@
     [self.passwordTextField resignFirstResponder];
   }
   return true;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  
+  
 }
 
 @end
