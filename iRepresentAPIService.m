@@ -15,30 +15,30 @@
 //[[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
 
 +(void)postNewUser:(NSString *)theName withPassword:(NSString *)thePassword withEmail:(NSString *)theEmail response:(void (^)(NSString *))completionHandler {
-  #warning Enter in the heroku url to make the call to for the issues array.
   NSString *baseURL = @"https://irepresent.herokuapp.com";
   NSString *theHTTPString = [NSString stringWithFormat:@"%@/users", baseURL];
-  NSURL *theURL = [NSURL URLWithString:theHTTPString];
-  NSURLRequest *theURLRequest = [NSURLRequest requestWithURL:theURL];
   AFHTTPRequestOperationManager *manager= [AFHTTPRequestOperationManager manager];
   manager.requestSerializer = [AFJSONRequestSerializer serializer];
   NSDictionary *params = @{@"username": theName,
                            @"password": thePassword,
                            @"email": theEmail};
-
+  
   [manager POST:theHTTPString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//    NSLog(@"The httpString being sent is: %@", theHTTPString);
-//    NSLog(@"The Body being sent is: %@", params);
     NSLog(@"JSON: %@", responseObject);
+    NSString *token = [JSONParser postUserResponse:responseObject];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:@"Your text here" forKey:@"token"];
+    [userDefaults setObject:token forKey:@"token"];
+#warning bring back the alert view stuff back to the new user VC in the success block when you figure out how.
+    UIAlertView *successUserPosted = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"You now directed to the feed page." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    
+    [successUserPosted show];
     
     // call JSON parser
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     NSLog(@"Error: %@", error);
     NSLog(@"The httpString being sent is: %@", theHTTPString);
     NSLog(@"The Body being sent is: %@", params);
-
+    
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Posting User"
                                                         message:[error localizedDescription]
                                                        delegate:nil
@@ -50,31 +50,32 @@
 } // postNewUser
 
 +(void) userLogin: (NSString *)theEmail withPassword:(NSString *)thePassword response:(void (^) (NSString *))completionHandler {
-  #warning Enter in the heroku url to make the call to for the get user login.
-  NSString *baseURL = @"pasteURLhere";
-  #warning Is the endpoint the same for the user login?
-  NSString *theHTTPString = [NSString stringWithFormat:@"%@/sign_in?", baseURL];
-  NSURL *theURL = [NSURL URLWithString:theHTTPString];
+
+  // <un>:<pw>@<host>:<port>/sign_in
+  NSString *baseURL = [NSString stringWithFormat:@"https://%@:%@@irepresent.herokuapp.com:80", theEmail, thePassword];
+  NSString *theHTTPString = [NSString stringWithFormat:@"%@/sign_in", baseURL];
   AFHTTPRequestOperationManager *manager= [AFHTTPRequestOperationManager manager];
+  manager.requestSerializer = [AFJSONRequestSerializer serializer];
   NSDictionary *params = @{@"password:": thePassword,
                            @"email:": theEmail};
   
   [manager GET:theHTTPString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     NSLog(@"JSON: %@", responseObject);
+    NSString *token = [JSONParser postUserResponse:responseObject];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:token forKey:@"token"];
+    
+    UIAlertView *successUserPosted = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"You now directed to the feed page." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    
+    [successUserPosted show];
+    
     
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     
     
     NSLog(@"Error: %@", error);
   }];
-  
-  
-  
-  
-  
-  
-  
-  
+ 
 }
 
 

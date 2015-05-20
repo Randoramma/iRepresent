@@ -23,10 +23,13 @@
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   // get the NSUserDefaults Key.
   NSString *myKey = [userDefaults stringForKey:@"token"];
+  NSLog(@"theAppDelegate Found this Token:%@", myKey); 
   
   if (myKey) {
+    
+    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *feedVC = [storyboard instantiateViewControllerWithIdentifier:@"FeedVC"];
+    UINavigationController *feedVC = [storyboard instantiateViewControllerWithIdentifier:@"FeedVC"];
     self.window.rootViewController = feedVC;
   }
   

@@ -8,6 +8,7 @@
 
 #import "NewUserViewController.h"
 #import "iRepresentAPIService.h"
+#import "JSONParser.h"
 
 @interface NewUserViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userEmailTextField;
@@ -28,19 +29,11 @@
  
 }
 
-
 - (IBAction)createButtonPressed:(id)sender {
   [iRepresentAPIService postNewUser:self.userUsernameTextField.text withPassword:self.userPasswordTextField.text withEmail:self.userEmailTextField.text response:^(NSString *status) {
-    // NSLog(@"%@", )
-    if ([status  isEqual: @"200"]) {
-      UIAlertView *successUserPosted = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"You now directed to the feed page." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+
+    if ([status  isEqual: @"success"]) {
       
-#warning "this is where we set the key.  This needs to be paired with a token.  
-       NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-      [userDefaults setObject:@"Your text here" forKey:@"StringKey"];
-      [userDefaults synchronize];
-      
-      [successUserPosted show];
     } else {
       
       UIAlertView *failedUserPosted = [[UIAlertView alloc] initWithTitle:@"Error posting user." message:@"User unsuccessfully posted to server" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
@@ -77,7 +70,7 @@
   if (buttonIndex == 1) {
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *feedVC = [storyboard instantiateViewControllerWithIdentifier:@"FeedVC"];
+    UINavigationController *feedVC = [storyboard instantiateViewControllerWithIdentifier:@"FeedVC"];
     // present view controller.
     [self presentViewController:feedVC animated:true completion:nil];
   }

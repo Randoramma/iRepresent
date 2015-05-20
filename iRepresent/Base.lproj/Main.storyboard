@@ -114,7 +114,7 @@
         <!--Feed Table View Controller-->
         <scene sceneID="fRb-3j-OHA">
             <objects>
-                <tableViewController storyboardIdentifier="FeedVC" id="OMV-ct-aLc" customClass="FeedTableViewController" sceneMemberID="viewController">
+                <tableViewController id="OMV-ct-aLc" customClass="FeedTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" id="dc5-oN-b2J">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -440,7 +440,7 @@
         <!--Navigation Controller-->
         <scene sceneID="zLz-oX-B7z">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tzD-2v-cx4" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="feedVC" automaticallyAdjustsScrollViewInsets="NO" id="tzD-2v-cx4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="84p-WO-9Wf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

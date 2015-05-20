@@ -66,7 +66,7 @@
   NSDictionary *userIssueDictionary = [NSJSONSerialization JSONObjectWithData:theData options:0 error:&theError];
   
   if(!theError) {
-    NSArray * dataArray = userIssueDictionary[@"data"];
+    NSArray *dataArray = userIssueDictionary[@"data"];
     for (NSDictionary *issueElements in dataArray) {
       theIssue.author_id = [issueElements[@"author_id"] integerValue];
       theIssue.title = issueElements[@"title"];
@@ -91,6 +91,16 @@
   
   
   
+}
+
++(NSString *)postUserResponse: (NSDictionary *)theResponse {
+  
+  NSString *theKey;
+  NSDictionary *data = theResponse[@"data"];
+  
+  theKey = data[@"token"];
+  
+  return theKey;
 }
 
 
