@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface FeedTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *mainLabelForCell;
+@property (weak, nonatomic) IBOutlet UILabel *downCountForCell;
+@property (weak, nonatomic) IBOutlet UILabel *upCountForCell;
+@property (weak, nonatomic) IBOutlet UIImageView *downTriangleForCell;
+@property (weak, nonatomic) IBOutlet UIImageView *upTriangleForCell;
+@property (weak, nonatomic) IBOutlet UITextView *textViewForCell;
+@property (weak, nonatomic) IBOutlet UILabel *dateForCell;
 
 @end

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D07372ED1B0AD9DB009C4F9C /* get-user-issues-fail.json in Resources */ = {isa = PBXBuildFile; fileRef = D07372E81B0AD9DB009C4F9C /* get-user-issues-fail.json */; };
-		D07372EE1B0AD9DB009C4F9C /* get-user-issues-success.json in Resources */ = {isa = PBXBuildFile; fileRef = D07372E91B0AD9DB009C4F9C /* get-user-issues-success.json */; };
 		D07372EF1B0AD9DB009C4F9C /* post-issues-success.json in Resources */ = {isa = PBXBuildFile; fileRef = D07372EA1B0AD9DB009C4F9C /* post-issues-success.json */; };
 		D07372F01B0AD9DB009C4F9C /* post-users-fail.json in Resources */ = {isa = PBXBuildFile; fileRef = D07372EB1B0AD9DB009C4F9C /* post-users-fail.json */; };
 		D07372F11B0AD9DB009C4F9C /* post-users-success.json in Resources */ = {isa = PBXBuildFile; fileRef = D07372EC1B0AD9DB009C4F9C /* post-users-success.json */; };
@@ -21,6 +19,7 @@
 		D08756D01B07B569007E6392 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08756CE1B07B569007E6392 /* LaunchScreen.xib */; };
 		D08756DC1B07B569007E6392 /* iRepresentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D08756DB1B07B569007E6392 /* iRepresentTests.m */; };
 		D0A62A751B0D081700839788 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A62A741B0D081700839788 /* FeedCell.xib */; };
+		D0A62A771B0D2FA500839788 /* get-user-issues-success.json in Resources */ = {isa = PBXBuildFile; fileRef = D0A62A761B0D2FA500839788 /* get-user-issues-success.json */; };
 		D0EDBE5F1B0A3AA2009DAF2F /* LoginScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDBE5E1B0A3AA2009DAF2F /* LoginScreenViewController.m */; };
 		D0EDBE621B0A3AB7009DAF2F /* NewUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDBE611B0A3AB7009DAF2F /* NewUserViewController.m */; };
 		D0EDBE651B0A3AD9009DAF2F /* FeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0EDBE641B0A3AD9009DAF2F /* FeedTableViewController.m */; };
@@ -44,8 +43,6 @@
 /* Begin PBXFileReference section */
 		0E6E4CBB8EA33E7EB6D150EE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		767822F290D8A9E91438035A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		D07372E81B0AD9DB009C4F9C /* get-user-issues-fail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "get-user-issues-fail.json"; sourceTree = "<group>"; };
-		D07372E91B0AD9DB009C4F9C /* get-user-issues-success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "get-user-issues-success.json"; sourceTree = "<group>"; };
 		D07372EA1B0AD9DB009C4F9C /* post-issues-success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "post-issues-success.json"; sourceTree = "<group>"; };
 		D07372EB1B0AD9DB009C4F9C /* post-users-fail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "post-users-fail.json"; sourceTree = "<group>"; };
 		D07372EC1B0AD9DB009C4F9C /* post-users-success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "post-users-success.json"; sourceTree = "<group>"; };
@@ -65,6 +62,7 @@
 		D08756DA1B07B569007E6392 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D08756DB1B07B569007E6392 /* iRepresentTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iRepresentTests.m; sourceTree = "<group>"; };
 		D0A62A741B0D081700839788 /* FeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		D0A62A761B0D2FA500839788 /* get-user-issues-success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "get-user-issues-success.json"; path = "../get-user-issues-success.json"; sourceTree = "<group>"; };
 		D0EDBE5D1B0A3AA2009DAF2F /* LoginScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginScreenViewController.h; sourceTree = "<group>"; };
 		D0EDBE5E1B0A3AA2009DAF2F /* LoginScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginScreenViewController.m; sourceTree = "<group>"; };
 		D0EDBE601B0A3AB7009DAF2F /* NewUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewUserViewController.h; sourceTree = "<group>"; };
@@ -153,8 +151,7 @@
 		D08756BF1B07B569007E6392 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D07372E81B0AD9DB009C4F9C /* get-user-issues-fail.json */,
-				D07372E91B0AD9DB009C4F9C /* get-user-issues-success.json */,
+				D0A62A761B0D2FA500839788 /* get-user-issues-success.json */,
 				D07372EA1B0AD9DB009C4F9C /* post-issues-success.json */,
 				D07372EB1B0AD9DB009C4F9C /* post-users-fail.json */,
 				D07372EC1B0AD9DB009C4F9C /* post-users-success.json */,
@@ -310,14 +307,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0A62A751B0D081700839788 /* FeedCell.xib in Resources */,
-				D07372EE1B0AD9DB009C4F9C /* get-user-issues-success.json in Resources */,
 				D08756CB1B07B569007E6392 /* Main.storyboard in Resources */,
 				D07372F11B0AD9DB009C4F9C /* post-users-success.json in Resources */,
 				D08756D01B07B569007E6392 /* LaunchScreen.xib in Resources */,
 				D08756CD1B07B569007E6392 /* Images.xcassets in Resources */,
 				D07372F01B0AD9DB009C4F9C /* post-users-fail.json in Resources */,
-				D07372ED1B0AD9DB009C4F9C /* get-user-issues-fail.json in Resources */,
 				D07372EF1B0AD9DB009C4F9C /* post-issues-success.json in Resources */,
+				D0A62A771B0D2FA500839788 /* get-user-issues-success.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

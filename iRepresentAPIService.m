@@ -51,7 +51,6 @@
 
 +(void) userLogin: (NSString *)theEmail withPassword:(NSString *)thePassword response:(void (^) (NSString *))completionHandler {
 
-  // <un>:<pw>@<host>:<port>/sign_in
   NSString *baseURL = [NSString stringWithFormat:@"http://irepresent.herokuapp.com"];
   NSString *theHTTPString = [NSString stringWithFormat:@"%@/sign_in", baseURL];
   AFHTTPRequestOperationManager *manager= [AFHTTPRequestOperationManager manager];
@@ -75,13 +74,31 @@
  
 } // userLogin
 
-+(void) feedRequestwithToken: (NSString *)theToken withRequestedFeed: (NSString *)theFeed response:(NSArray *(^) (NSString *)) completionHandler {
++(void) feedRequestwithSortFormat: (NSString *)sortFormat completionHandler:(void (^) (NSArray* items, NSString *error))completionHandler {
+  
+  NSString *baseURL = [NSString stringWithFormat:@"http://irepresent.herokuapp.com"];
+  NSString *theHTTPString = [NSString stringWithFormat:@"%@/sign_in?%@", baseURL, sortFormat];
+  AFHTTPRequestOperationManager *manager= [AFHTTPRequestOperationManager manager];
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  NSString *myKey = [userDefaults stringForKey:@"token"];
+  #warning "When we get the token working, place here.
+  [manager.requestSerializer setValue:myKey forHTTPHeaderField:@"Authorization"];
+  [manager GET:theHTTPString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    // parse JSON here
+    [JSONParser getUserIssues:responseObject];
+    
+    
+    
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    
+    // display alertView saying the request failed.
+    
+  }];
   
   
+
   
- 
-  
-}
+} // feedRequestwithToken
                        
 
 

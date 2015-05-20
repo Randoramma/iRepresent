@@ -11,7 +11,7 @@
 
 @interface JSONParser : NSObject
 
-+(Issue *) getUserIssues;
++(NSMutableArray *) getUserIssues:(NSData *)jsonDATA;
 +(void) postUserIssue: (Issue *)theIssue;
 +(NSString*)postUserResponse: (NSData *)theJSON;
 
