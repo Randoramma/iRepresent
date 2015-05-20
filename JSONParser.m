@@ -52,7 +52,8 @@
 @implementation JSONParser
 //:(NSData *)jsonDATA
 +(Issue *)getUserIssues {
-  NSString *filePath = [[NSBundle mainBundle]pathForResource:@"get-user-issues-fail" ofType:@"json"];
+#warning Enter in the heroku url to make the call to for the issues array.
+  NSString *filePath = [[NSBundle mainBundle]pathForResource:@"get-user-issues-success" ofType:@"json"];
   
   if (!filePath) {
     
@@ -65,7 +66,7 @@
   NSDictionary *userIssueDictionary = [NSJSONSerialization JSONObjectWithData:theData options:0 error:&theError];
   
   if(!theError) {
-    NSArray * dataArray = userIssueDictionary[@"data"];
+    NSArray *dataArray = userIssueDictionary[@"data"];
     for (NSDictionary *issueElements in dataArray) {
       theIssue.author_id = [issueElements[@"author_id"] integerValue];
       theIssue.title = issueElements[@"title"];
@@ -90,6 +91,16 @@
   
   
   
+}
+
++(NSString *)postUserResponse: (NSDictionary *)theResponse {
+  
+  NSString *theKey;
+  NSDictionary *data = theResponse[@"data"];
+  
+  theKey = data[@"token"];
+  
+  return theKey;
 }
 
 

@@ -12,7 +12,7 @@
 @interface JSONParser : NSObject
 
 +(Issue *) getUserIssues;
-
 +(void) postUserIssue: (Issue *)theIssue;
++(NSString*)postUserResponse: (NSData *)theJSON;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "NewUserViewController.h"
 #import "iRepresentAPIService.h"
+#import "JSONParser.h"
 
 @interface NewUserViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userEmailTextField;
@@ -24,21 +25,14 @@
   
   self.userEmailTextField.delegate = self;
   self.userPasswordTextField.delegate = self;
-  self.userUsernameTextField.delegate = self; 
-//  self.tapGestureRecoginzer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard:)];
-//  [self.view addGestureRecognizer:self.tapGestureRecoginzer];
+  self.userUsernameTextField.delegate = self;
+ 
 }
-
 
 - (IBAction)createButtonPressed:(id)sender {
   [iRepresentAPIService postNewUser:self.userUsernameTextField.text withPassword:self.userPasswordTextField.text withEmail:self.userEmailTextField.text response:^(NSString *status) {
-    
-    if ([status  isEqual: @"200"]) {
-      UIAlertView *successUserPosted = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"You now need to login to post through the login page." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-      
-      [successUserPosted show];
-      
-      
+
+    if ([status  isEqual: @"success"]) {
       
     } else {
       
@@ -64,6 +58,22 @@
     [self.userPasswordTextField resignFirstResponder];
   }
   return true;
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField {
+  if (textField == self.userEmailTextField) {
+    self.userEmailTextField.keyboardType = UIKeyboardTypeEmailAddress;
+  }
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+  if (buttonIndex == 1) {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *feedVC = [storyboard instantiateViewControllerWithIdentifier:@"FeedVC"];
+    // present view controller.
+    [self presentViewController:feedVC animated:true completion:nil];
+  }
 }
 
 
