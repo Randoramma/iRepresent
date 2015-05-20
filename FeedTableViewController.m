@@ -17,4 +17,16 @@
 
 @implementation FeedTableViewController
 
+-(void)viewDidLoad {
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:2 target:self action:@selector(segueBack)];
+  
+  
+  
+  
+}
+
+-(void)segueBack:(id)sender {
+  
+  
+}
 @end
