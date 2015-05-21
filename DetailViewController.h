@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
+#import "Issue.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <MFMailComposeViewControllerDelegate>
+@property (strong, nonatomic) Issue *selectedIssue; 
 
+- (IBAction)showEmail:(id)sender;
 @end

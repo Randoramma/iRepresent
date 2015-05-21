@@ -13,7 +13,7 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0zG-3P-kVL" id="Eth-he-NrX">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvk-lk-dUY">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvk-lk-dUY" userLabel="Title Label">
                         <rect key="frame" x="10" y="10" width="42" height="20"/>
                         <attributedString key="attributedText">
                             <fragment content="Label">
@@ -26,7 +26,7 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etg-UI-xR4">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etg-UI-xR4" userLabel="Down 100">
                         <rect key="frame" x="83" y="56" width="21" height="14"/>
                         <attributedString key="attributedText">
                             <fragment content="100">
@@ -38,7 +38,7 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFw-cW-s7w">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFw-cW-s7w" userLabel="Up 100">
                         <rect key="frame" x="40" y="56" width="21" height="14"/>
                         <attributedString key="attributedText">
                             <fragment content="100">
@@ -66,15 +66,7 @@
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iuj-lG-iBK">
                         <rect key="frame" x="112" y="27" width="208" height="43"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <attributedString key="attributedText">
-                            <fragment content="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolor">
-                                <attributes>
-                                    <color key="NSColor" red="0.58723958333333326" green="0.58723958333333326" blue="0.58723958333333326" alpha="1" colorSpace="calibratedRGB"/>
-                                    <font key="NSFont" size="12" name="HelveticaNeue"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="charWrapping" baseWritingDirection="natural"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
+                        <attributedString key="attributedText"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <imageView userInteractionEnabled="NO" alpha="0.49999999999999961" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Up Triangle Black" translatesAutoresizingMaskIntoConstraints="NO" id="RiR-Ah-QBd">
@@ -104,13 +96,13 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="dateForCell" destination="D90-9a-gDw" id="E95-Ms-ujN"/>
-                <outlet property="downCountForCell" destination="etg-UI-xR4" id="SOb-An-GC7"/>
-                <outlet property="downTriangleForCell" destination="KGe-P9-ESb" id="CdZ-Ox-wO5"/>
-                <outlet property="mainLabelForCell" destination="Tvk-lk-dUY" id="XOT-5Z-QU8"/>
-                <outlet property="textViewForCell" destination="Iuj-lG-iBK" id="m8H-Yg-B2h"/>
-                <outlet property="upCountForCell" destination="hFw-cW-s7w" id="RCP-9X-Csr"/>
-                <outlet property="upTriangleForCell" destination="RiR-Ah-QBd" id="Fnn-nc-zDW"/>
+                <outlet property="myDateForCell" destination="D90-9a-gDw" id="DYg-P9-FbH"/>
+                <outlet property="myDownCountForCell" destination="etg-UI-xR4" id="jEQ-wB-Rx3"/>
+                <outlet property="myDownTriangleForCell" destination="KGe-P9-ESb" id="xk4-mv-0UB"/>
+                <outlet property="myMainLabelForCell" destination="Tvk-lk-dUY" id="g7R-kM-xxg"/>
+                <outlet property="myTextViewForCell" destination="Iuj-lG-iBK" id="4b4-ME-m7U"/>
+                <outlet property="myUpCountForCell" destination="hFw-cW-s7w" id="Log-7c-87u"/>
+                <outlet property="myUpTriangleForCell" destination="RiR-Ah-QBd" id="CGB-Mj-4VJ"/>
             </connections>
             <point key="canvasLocation" x="224" y="18.5"/>
         </tableViewCell>

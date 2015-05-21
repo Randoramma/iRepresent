@@ -56,7 +56,7 @@
   
   [manager.requestSerializer setAuthorizationHeaderFieldWithUsername:theEmail password:thePassword];
   [manager GET:theHTTPString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-    NSLog(@"JSON: %@", responseObject);
+//    NSLog(@"JSON: %@", responseObject);
     NSString *token = [JSONParser postUserResponse:responseObject];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:token forKey:@"token"];
@@ -79,23 +79,35 @@
   AFHTTPRequestOperationManager *manager= [AFHTTPRequestOperationManager manager];
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   NSString *myKey = [userDefaults stringForKey:@"token"];
-#warning "When we get the token working, place here.
   [manager.requestSerializer setValue:myKey forHTTPHeaderField:@"Authorization"];
   [manager GET:theHTTPString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     // parse JSON here
-    [JSONParser getUserIssues:responseObject];
-    // completion handler /... success.  Array
     
+#warning We never get to this point in the codeVVVV.  2015-05-20 20:30
+    NSMutableArray *theItems = [JSONParser getUserIssues:responseObject];
+    // completion handler /... success.  Array
+    completionHandler (theItems, nil);
     
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     
-    // display alertView saying the request failed.
-    
+    completionHandler (nil, @"There was an error requesting the feed.");
   }];
+}
+
++(NSArray *) jerryRig {
+  NSString *filePath = [[NSBundle mainBundle]pathForResource:@"get-user-issues-success" ofType:@"json"];
   
-} // feedRequestwithToken
+  if (!filePath) {
+    NSLog(@"File couldn't be read!");
+  }
+  
+  // convert path to NSData (did not need)
+  
+  NSData *theData = [[NSData alloc] initWithContentsOfFile:filePath];
 
-
+  NSMutableArray *theItems = [JSONParser getUserIssues:theData];
+  return theItems; 
+}
 
 
 @end

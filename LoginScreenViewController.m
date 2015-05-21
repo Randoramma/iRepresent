@@ -37,24 +37,23 @@
 } // viewWillDisappear
 
 - (IBAction)loginPressed:(id)sender {
-
- [iRepresentAPIService userLogin:self.emailTextField.text withPassword:self.passwordTextField.text response:^(BOOL success) {
-   // everything in here gets bundled and handed over to the method: iRepresentAPIService userLogin:self.emailTextField.text withPassword:self.passwordTextField.text response and gets exceuted there.
-   if (success) {
-     NSLog(@"it worked");
-     UIAlertView *successUserPosted = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"You now directed to the feed page." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-     
-     [successUserPosted show];
-
-     [self performSegueWithIdentifier:@"verifiedToFeedSegue" sender:self];
-     // load data from current view controller to settingVC
-     
-   } else {
-     
-     UIAlertView *failedUserPosted = [[UIAlertView alloc] initWithTitle:@"Error posting user." message:@"User unsuccessfully posted to server, try creating a user." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-     [failedUserPosted show];
-   }
-   }]; // response
+  
+  [iRepresentAPIService userLogin:self.emailTextField.text withPassword:self.passwordTextField.text response:^(BOOL success) {
+    // everything in here gets bundled and handed over to the method: iRepresentAPIService userLogin:self.emailTextField.text withPassword:self.passwordTextField.text response and gets exceuted there.
+    if (success) {
+      UIAlertView *successUserPosted = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Your about to make a difference!" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+      
+      [successUserPosted show];
+      
+      [self performSegueWithIdentifier:@"verifiedToFeedSegue" sender:self];
+      // load data from current view controller to settingVC
+      
+    } else {
+      
+      UIAlertView *failedUserPosted = [[UIAlertView alloc] initWithTitle:@"You have Failed!" message:@"Bummer, we can't get you logged in?  Check your credentials or maybe you aren't a registered user?" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+      [failedUserPosted show];
+    }
+  }]; // response
   
 } // loginPressed
 
@@ -72,10 +71,10 @@
   }
   return true;
 }
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  
-  
-}
+//
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//  
+//  
+//}
 
 @end

@@ -17,12 +17,12 @@
  "up": 21,
  "down": 203
  */
-
+@property (strong, nonatomic)NSString *issue_id;
 @property (assign, nonatomic)NSInteger author_id;
 @property (strong, nonatomic)NSString *title;
 @property (strong, nonatomic)NSString *content;
 @property (assign, nonatomic)NSInteger upVotes;
 @property (assign, nonatomic)NSInteger downVotes;
-@property (strong, nonatomic)NSDate *theDate;
+@property (strong, nonatomic)NSString *theDate;
 
 @end
