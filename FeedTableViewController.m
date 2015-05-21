@@ -27,6 +27,8 @@
   self.tableView.dataSource = self;
   // determining which tab bar button we selected to determine the sort functionality we want.
   if (self.view.tag == 1) {
+    
+    
     self.feedFormat = @"sort=newest";
   } else if (self.view.tag == 2) {
     self.feedFormat = @"sort=popular";
