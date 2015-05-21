@@ -25,10 +25,8 @@
   self.tableView.delegate = self;
   self.tableView.dataSource = self;
   
-  UIButton *infoButton = [UIButton buttonWithType: UIButtonTypeInfoLight];
-  [infoButton addTarget:self action:@selector(showInfo:)forControlEvents:UIControlEventTouchUpInside];
-  UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStylePlain target:self action:nil];
-  self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+   UINavigationItem *rightBarButtonItem = [[UINavigationItem alloc] initWithTitle:@"New"];
+  [rightBarButtonItem performSelector:@selector(@"newDetailPage") withObject:self];
   
   
   // determining which tab-bar button we selected to determine the sort functionality we want.
