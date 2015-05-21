@@ -91,6 +91,46 @@
     completionHandler (nil, @"There was an error requesting the feed.");
   }];
 }
++(void) createNewIssue: (NSString*)theTitle andContent: (NSString *)theContent {
+  NSString *baseURL = @"https://irepresent.herokuapp.com";
+  NSString *theHTTPString = [NSString stringWithFormat:@"%@/issues", baseURL];
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  NSLog(@"%@",theHTTPString);
+  NSString *myKey = [userDefaults stringForKey:@"token"];
+  AFHTTPRequestOperationManager *manager= [AFHTTPRequestOperationManager manager];
+  manager.requestSerializer = [AFJSONRequestSerializer serializer];
+  NSDictionary *params = @{@"title": theTitle,
+                           @"content": theContent,
+                           @"eat": myKey};
+  
+  [manager POST:theHTTPString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSLog(@"JSON: %@", responseObject);
+    
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    NSLog(@"Error: %@", error);
+    NSLog(@"The httpString being sent is: %@", theHTTPString);
+    NSLog(@"The Body being sent is: %@", params);
+  }];
+}
+
++(void)voteWithString:(NSString *)theID withVote:(NSString *)theVote {
+  NSString *baseURL = @"https://irepresent.herokuapp.com";
+  NSString *theHTTPString = [NSString stringWithFormat:@"%@/issues/%@", baseURL, theID];
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  NSLog(@"%@",theHTTPString);
+  NSString *myKey = [userDefaults stringForKey:@"token"];
+  AFHTTPRequestOperationManager *manager= [AFHTTPRequestOperationManager manager];
+  manager.requestSerializer = [AFJSONRequestSerializer serializer];
+  NSDictionary *params = @{@"eat": myKey,
+                           @"vote": theVote};
+  [manager PUT:theHTTPString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    
+  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    NSLog(@"Error: %@", error);
+    NSLog(@"The httpString being sent is: %@", theHTTPString);
+    NSLog(@"The Body being sent is: %@", params);
+  }];
+}
 
 +(NSArray *) jerryRig {
   NSString *filePath = [[NSBundle mainBundle]pathForResource:@"get-user-issues-success" ofType:@"json"];

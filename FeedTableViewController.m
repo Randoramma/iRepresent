@@ -1,5 +1,5 @@
 //
-//  FeedTableViewController.m
+//  ViewController.m
 //  iRepresent
 //
 //  Created by Randy McLain on 5/18/15.
@@ -38,7 +38,6 @@
   }
   
   [iRepresentAPIService feedRequestwithSortFormat:self.feedFormat completionHandler:^(NSArray *items, NSString *error) {
-#warning reenable if the server works.  Then delete jerryRig.
     if (!error) {
       self.issues = items;
       NSLog(@"we got to the Feed Table View");
@@ -77,39 +76,29 @@
 } // cellForRowAtIndexPath
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  [self performSegueWithIdentifier:@"segueToDetail" sender:self];
   
 } // didSelectRowAtIndexPath
 
-//override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//  if segue.identifier == "ShowWeb" {
-//    let destination = segue.destinationViewController as! WebViewController
-//    let indexPath = self.tableView.indexPathForSelectedRow()
-//    let repo = self.results[indexPath!.row]
-//    destination.selectedRepo = repo
-//  }
-//}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  if ([segue isEqual:@"segueToNewDetail"]) {
+  if ([segue.identifier isEqual:@"segueToNewDetail"]) {
     // pass an empty issue object to detail controller.
-
-    
-    
-    
-  }else if ([segue isEqual:@"segueToDetail"]) {
+    DetailViewController *newDetail = (DetailViewController*)segue.destinationViewController;
+    // send issue over
+  }else if ([segue.identifier isEqual:@"segueToDetail"]) {
     // pass a completed issue object to detail controller.
     NSIndexPath *theIndexPath = [self.tableView indexPathForSelectedRow];
-    int theRow = [theIndexPath row];
-    DetailViewController *detailVCFromIssue = [[DetailViewController alloc] init];
-    detailVCFromIssue.selectedIssue = self.issues[theRow];
-    [self.navigationController pushViewController:detailVCFromIssue animated:true];
-  
-  }else if ([segue isEqual:@"segueToDetail"]) {
-    DetailViewController *detailVCForNewIssue = [[DetailViewController alloc] init];
-    Issue *newIssue = [[Issue alloc] init];
-    detailVCForNewIssue.selectedIssue = newIssue;
-    [self.navigationController pushViewController:detailVCForNewIssue animated:true];
+    NSInteger theRow = [theIndexPath row];
+    DetailViewController *newDetail = (DetailViewController*)segue.destinationViewController;
+    newDetail.selectedIssue = self.issues[theRow];
     
+//    [self.navigationController pushViewController:detailVCFromIssue animated:true];
+  
+  }else if ([segue.identifier isEqual:@"logout"]) {
+    // here I want to return to the root VC.
+    // setup up a public method in the app delegate that sets the rootView controller in the window.  Call
+    // that here when you zero out the key.  
     
   }else {
     NSLog(@"non-labeled segue was chosen.");
