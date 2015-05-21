@@ -10,7 +10,8 @@
            "date_created": "June 12 2015",
            "votes_up": 10,
            "votes_down": 10,
-           "votes_total": 20
+           "votes_total": 20,
+           "user_vote":"down"
            },
            {
            "issue_id": 2,
@@ -20,7 +21,8 @@
            "date_created": "June 12 2015",
            "votes_up": 640,
            "votes_down": 621,
-           "votes_total": 1261
+           "votes_total": 1261,
+           "user_vote":null
            },
            {
            "issue_id": 3,
@@ -30,7 +32,8 @@
            "date_created": "May 20 2015 12:15:00",
            "votes_up": 1042,
            "votes_down": 99,
-           "votes_total": 1141
+           "votes_total": 1141,
+           "user_vote": "up"
            }
            ]
 }

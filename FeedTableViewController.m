@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Randy McLain. All rights reserved.
 //
 
+#import "DetailViewController.h"
 #import "FeedTableViewController.h"
 #import "FeedTableViewCell.h"
 #import "JSONParser.h"
@@ -53,11 +54,21 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   
   return self.issueFeed.count;
-}
+} // numberOfRowsInSection
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   FeedTableViewCell *theCell = [tableView dequeueReusableCellWithIdentifier:@"feedNib"];
   
   return theCell;
+} // cellForRowAtIndexPath
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  DetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:(@"myDetailViewController")];
+  
+  
+  
+  
+  
+  
 }
 @end
