@@ -16,5 +16,9 @@
 
 +(void) feedRequestwithSortFormat: (NSString *)sortFormat completionHandler:(void (^) (NSArray* items, NSString *error))completionHandler;
 
++(void) createNewIssue: (NSString*)theTitle andContent: (NSString *)theContent;
+
++(void) voteWithString: (NSString*)theID withVote: (NSString *)theVote;
+
 +(NSArray *) jerryRig;
 @end
