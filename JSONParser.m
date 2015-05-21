@@ -10,25 +10,21 @@
 
 @implementation JSONParser
 
-+(NSMutableArray *)getUserIssues:(NSData *)jsonDATA {
-  NSString *filePath = [[NSBundle mainBundle]pathForResource:@"get-user-issues-success" ofType:@"json"];
-  
-  if (!filePath) {
-    
-    NSLog(@"Contents of file cannot be read!");
-  }
-  NSData *theTempData = [[NSData alloc] initWithContentsOfFile:filePath];
++(NSMutableArray *)getUserIssues:(NSDictionary *)jsonDATA {
+//  NSString *filePath = [[NSBundle mainBundle]pathForResource:@"get-user-issues-success" ofType:@"json"];
+//  
+//  if (!filePath) {
+//    
+//    NSLog(@"Contents of file cannot be read!");
+//  }
+//  NSData *theTempData = [[NSData alloc] initWithContentsOfFile:filePath];
   NSMutableArray *theIssues = [[NSMutableArray alloc] init];
-  NSError *theError;
-  
-  NSDictionary *userIssueDictionary = [NSJSONSerialization JSONObjectWithData:theTempData options:0 error:&theError];
-  
-  if(!theError) {
-    NSArray *dataArray = userIssueDictionary[@"data"];
+
+    NSArray *dataArray = jsonDATA[@"data"];
     for (NSDictionary *issueElements in dataArray) {
       Issue *theIssue = [[Issue alloc] init];
-      theIssue.issue_id = issueElements[@"issue_id"]; 
-      theIssue.author_id = [issueElements[@"author_id"] integerValue];
+      theIssue.identity = issueElements[@"_id"];
+      theIssue.author_id = issueElements[@"author_id"];
       theIssue.title = issueElements[@"title"];
       theIssue.content = issueElements[@"content"];
       theIssue.upVotes = [issueElements[@"votes_up"] integerValue];
@@ -37,10 +33,6 @@
       [theIssues addObject:theIssue];
     } // for in dataArray
     
-  } // if(!theError)
-  else {
-    NSLog(@"%@", theError.localizedDescription);
-  }
   return theIssues;
 }
 

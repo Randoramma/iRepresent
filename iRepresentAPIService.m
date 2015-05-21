@@ -75,17 +75,15 @@
 +(void) feedRequestwithSortFormat: (NSString *)sortFormat completionHandler:(void (^) (NSArray* items, NSString *error))completionHandler {
   
   NSString *baseURL = [NSString stringWithFormat:@"http://irepresent.herokuapp.com"];
-  NSString *theHTTPString = [NSString stringWithFormat:@"%@/sign_in?%@", baseURL, sortFormat];
+  NSString *theHTTPString = [NSString stringWithFormat:@"%@/issues?%@", baseURL, sortFormat];
   AFHTTPRequestOperationManager *manager= [AFHTTPRequestOperationManager manager];
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   NSString *myKey = [userDefaults stringForKey:@"token"];
-  [manager.requestSerializer setValue:myKey forHTTPHeaderField:@"Authorization"];
+  [manager.requestSerializer setValue:myKey forHTTPHeaderField:@"eat"];
+  NSLog(@"The Token is:%@", myKey);
   [manager GET:theHTTPString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-    // parse JSON here
-    
-#warning We never get to this point in the codeVVVV.  2015-05-20 20:30
     NSMutableArray *theItems = [JSONParser getUserIssues:responseObject];
-    // completion handler /... success.  Array
+
     completionHandler (theItems, nil);
     
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

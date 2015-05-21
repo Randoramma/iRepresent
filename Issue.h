@@ -9,16 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface Issue : NSObject
-/*
- "author_id": 32,
- "title": "Mayor McCheese for Govenor",
- "content": "I am sick of all the Pro-Ronald McDonald supporters in this city. It's time for a change!",
- "votes": {
- "up": 21,
- "down": 203
- */
-@property (strong, nonatomic)NSString *issue_id;
-@property (assign, nonatomic)NSInteger author_id;
+
+@property (strong, nonatomic)NSString *identity;
+@property (assign, nonatomic)NSString *author_id;
 @property (strong, nonatomic)NSString *title;
 @property (strong, nonatomic)NSString *content;
 @property (assign, nonatomic)NSInteger upVotes;

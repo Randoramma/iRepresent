@@ -40,16 +40,14 @@
   [iRepresentAPIService feedRequestwithSortFormat:self.feedFormat completionHandler:^(NSArray *items, NSString *error) {
 #warning reenable if the server works.  Then delete jerryRig.
     if (!error) {
-      //self.issues = items;
+      self.issues = items;
       NSLog(@"we got to the Feed Table View");
     } else {
       NSLog(@"Feed response error is: %@", error);
     }
+    [self.tableView reloadData];
   }];
-  
-  //////////////Temp items for the TVC ////////////////
-  self.issues = [iRepresentAPIService jerryRig];
-  
+
   UINib *cellNib = [UINib nibWithNibName:@"FeedCell" bundle:nil];
   [self.tableView registerNib:cellNib forCellReuseIdentifier:@"feedNib"];
   
