@@ -1,0 +1,39 @@
+{
+  "success": true,
+  "message": "Data returned successfully.",
+  "data": [
+           {
+           "issue_id": 1,
+           "title": "First Issue",
+           "description": "Test content for the first issue.",
+           "author_id": 1,
+           "date_created": "June 12 2015",
+           "votes_up": 10,
+           "votes_down": 10,
+           "votes_total": 20,
+           "user_vote":"down"
+           },
+           {
+           "issue_id": 2,
+           "title": "Second Issue",
+           "description": "Test content for the second issue.",
+           "author_id": 1,
+           "date_created": "June 12 2015",
+           "votes_up": 640,
+           "votes_down": 621,
+           "votes_total": 1261,
+           "user_vote":null
+           },
+           {
+           "issue_id": 3,
+           "title": "Third Issue",
+           "description": "Test content for the third issue.",
+           "author_id": 2,
+           "date_created": "May 20 2015 12:15:00",
+           "votes_up": 1042,
+           "votes_down": 99,
+           "votes_total": 1141,
+           "user_vote": "up"
+           }
+           ]
+}
