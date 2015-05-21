@@ -49,7 +49,7 @@
   
 } // postNewUser
 
-+(void) userLogin: (NSString *)theEmail withPassword:(NSString *)thePassword response:(void (^) (NSString *))completionHandler {
++(void) userLogin: (NSString *)theEmail withPassword:(NSString *)thePassword response:(void (^) (BOOL success)) completionHandler {
 
   NSString *baseURL = [NSString stringWithFormat:@"http://irepresent.herokuapp.com"];
   NSString *theHTTPString = [NSString stringWithFormat:@"%@/sign_in", baseURL];
@@ -61,13 +61,12 @@
     NSString *token = [JSONParser postUserResponse:responseObject];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:token forKey:@"token"];
+    // the code from the login screen gets executed here.VVV
+    completionHandler(true);
     
-    UIAlertView *successUserPosted = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"You now directed to the feed page." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-    
-    [successUserPosted show];
-
-  } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    
+      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    // the code from the login screen gets executed here.VVV  
+    completionHandler(false);
     
     NSLog(@"Error: %@", error);
   }];
@@ -86,7 +85,7 @@
   [manager GET:theHTTPString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
     // parse JSON here
     [JSONParser getUserIssues:responseObject];
-    
+    // completion handler /... success.  Array
     
     
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -94,10 +93,7 @@
     // display alertView saying the request failed.
     
   }];
-  
-  
 
-  
 } // feedRequestwithToken
                        
 

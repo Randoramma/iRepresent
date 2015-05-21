@@ -16,11 +16,9 @@
 
 @interface FeedTableViewController ()
 @property (strong, nonatomic) NSString *feedFormat;
-@property (strong, nonatomic) NSArray *issueFeed;
+@property (strong, nonatomic) NSArray *issues;
 
 @end
-
-
 
 @implementation FeedTableViewController
 
@@ -38,7 +36,7 @@
   [iRepresentAPIService feedRequestwithSortFormat:self.feedFormat completionHandler:^(NSArray *items, NSString *error) {
     
     if (!error) {
-    self.issueFeed = items;
+    self.issues = items;
       NSLog(@"we got to the Feed Table View"); 
     } else {
       NSLog(@"%@", error.description);
@@ -53,22 +51,26 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   
-  return self.issueFeed.count;
+  return self.issues.count;
 } // numberOfRowsInSection
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   FeedTableViewCell *theCell = [tableView dequeueReusableCellWithIdentifier:@"feedNib"];
+  Issue *theIssue = self.issues[indexPath.row];
+  theCell.myMainLabelForCell.text = theIssue.title;
+  theCell.myTextViewForCell.text = theIssue.content;
+//  theCell.myDownCountForCell.text = [NSString stringWithFormat:theIssue.downVotes];
+//  theCell.myUpCountForCell.text = theIssue.upVotes;
   
   return theCell;
 } // cellForRowAtIndexPath
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  DetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:(@"myDetailViewController")];
-  
-  
-  
-  
-  
-  
-}
+
+//  self performSegueWithIdentifier:@"segueToDetail" sender:[indexPath.row];
+
+} // didSelectRowAtIndexPath
+
+
+
 @end

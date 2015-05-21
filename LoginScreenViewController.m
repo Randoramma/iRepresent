@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (strong, nonatomic) NSString *myKey;
 
 @end
 
@@ -36,25 +37,25 @@
 } // viewWillDisappear
 
 - (IBAction)loginPressed:(id)sender {
-  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-  // get the NSUserDefaults Key.
-  NSString *myKey = [userDefaults stringForKey:@"token"];
- [iRepresentAPIService userLogin:self.emailTextField.text withPassword:self.passwordTextField.text response:^(NSString *status) {
-   NSLog(@"it worked"); 
-   
-   }]; // response
-   if (myKey) {
-#warning As time permits, add in the call for login to the server determining if key is valid.  
+
+ [iRepresentAPIService userLogin:self.emailTextField.text withPassword:self.passwordTextField.text response:^(BOOL success) {
+   // everything in here gets bundled and handed over to the method: iRepresentAPIService userLogin:self.emailTextField.text withPassword:self.passwordTextField.text response and gets exceuted there.
+   if (success) {
+     NSLog(@"it worked");
+     UIAlertView *successUserPosted = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"You now directed to the feed page." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+     
+     [successUserPosted show];
+
      [self performSegueWithIdentifier:@"verifiedToFeedSegue" sender:self];
      // load data from current view controller to settingVC
      
    } else {
-
+     
      UIAlertView *failedUserPosted = [[UIAlertView alloc] initWithTitle:@"Error posting user." message:@"User unsuccessfully posted to server, try creating a user." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
      [failedUserPosted show];
    }
-
-
+   }]; // response
+  
 } // loginPressed
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField {
