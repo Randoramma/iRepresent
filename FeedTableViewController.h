@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FeedTableViewController : UITableViewController <UITableViewDelegate, UITableViewDelegate>
+@interface FeedTableViewController : UITableViewController <UITableViewDelegate, UITabBarDelegate>
 
 @end

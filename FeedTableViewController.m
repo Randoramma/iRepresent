@@ -24,23 +24,22 @@
 -(void)viewDidLoad {
   self.tableView.delegate = self;
   self.tableView.dataSource = self;
-  
-   UINavigationItem *rightBarButtonItem = [[UINavigationItem alloc] initWithTitle:@"New"];
-  [rightBarButtonItem performSelector:@selector(@"newDetailPage") withObject:self];
+  self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStyleDone target:self action:@selector(pushDetail)];
+   self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleDone target:self action:@selector(logout)];
   
   
   // determining which tab-bar button we selected to determine the sort functionality we want.
   if (self.view.tag == 1) {
     self.feedFormat = @"sort=newest";
-    self.title = @"Newest Issues";
+    self.navigationItem.title = @"Newest Issues";
+    self.title = @"Newest Issuesj";
   } else if (self.view.tag == 2) {
     self.feedFormat = @"sort=popular";
-    self.title = @"Popular Issues";
+    self.navigationItem.title = @"Popular Issues";
   }
   
-  
   [iRepresentAPIService feedRequestwithSortFormat:self.feedFormat completionHandler:^(NSArray *items, NSString *error) {
-    
+    #warning reenable if the server works.  Then delete jerryRig.
     if (!error) {
       //self.issues = items;
       NSLog(@"we got to the Feed Table View");
@@ -57,6 +56,11 @@
   
 } // viewDidLoad
 
+-(void)viewWillAppear:(BOOL)animated {
+  [self.tableView reloadData];
+}
+
+#pragma mark - TableView
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return self.issues.count;
 } // numberOfRowsInSection

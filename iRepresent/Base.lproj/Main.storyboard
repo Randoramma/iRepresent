@@ -105,17 +105,17 @@
                         <outlet property="emailTextField" destination="CPs-My-S19" id="2Ji-v0-9DW"/>
                         <outlet property="loginButton" destination="Q4d-w0-5v0" id="zOU-qN-keC"/>
                         <outlet property="passwordTextField" destination="q6i-kj-hd0" id="vnH-gk-zgU"/>
-                        <segue destination="wao-j1-aBD" kind="show" identifier="verifiedToFeedSegue" id="ESz-yO-7iB"/>
+                        <segue destination="wao-j1-aBD" kind="presentation" identifier="verifiedToFeedSegue" id="ESz-yO-7iB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1227" y="173"/>
         </scene>
-        <!--Feed Table View Controller-->
+        <!--Newest-->
         <scene sceneID="fRb-3j-OHA">
             <objects>
-                <tableViewController storyboardIdentifier="newestFeedVC" id="OMV-ct-aLc" customClass="FeedTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="newestFeedVC" title="Newest" id="OMV-ct-aLc" customClass="FeedTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" id="dc5-oN-b2J">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +133,14 @@
                             <outlet property="delegate" destination="OMV-ct-aLc" id="ju0-de-FPc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="29Q-oC-V26"/>
+                    <navigationItem key="navigationItem" id="29Q-oC-V26">
+                        <barButtonItem key="rightBarButtonItem" title="New" style="done" id="cXh-IQ-MpE">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="HRL-e8-XR8" kind="presentation" identifier="segueToNewDetail" id="3Mb-Gr-PhT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="HRL-e8-XR8" kind="show" identifier="segueToDetail" id="B7b-QC-pFo"/>
                     </connections>
@@ -142,10 +149,10 @@
             </objects>
             <point key="canvasLocation" x="2593" y="1228"/>
         </scene>
-        <!--Feed Table View Controller-->
+        <!--Popular-->
         <scene sceneID="lE4-T8-lPV">
             <objects>
-                <tableViewController storyboardIdentifier="popularFeedVC" id="mI3-G9-ptn" customClass="FeedTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="popularFeedVC" title="Popular" id="mI3-G9-ptn" customClass="FeedTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" tag="2" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="22" sectionFooterHeight="22" id="2gx-kg-XIK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,7 +170,14 @@
                             <outlet property="delegate" destination="mI3-G9-ptn" id="AXd-A5-a60"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="oXy-1z-wNN"/>
+                    <navigationItem key="navigationItem" id="oXy-1z-wNN">
+                        <barButtonItem key="rightBarButtonItem" title="New" style="done" id="SAU-HC-84b">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="HRL-e8-XR8" kind="presentation" identifier="segueToNewDetail" id="d9w-6P-MFu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MYP-S3-UX9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -358,7 +372,7 @@
                         <outlet property="userEmailTextField" destination="6Rp-0c-T84" id="CO8-bN-tSz"/>
                         <outlet property="userPasswordTextField" destination="r1r-10-FXy" id="UxC-Os-dVv"/>
                         <outlet property="userUsernameTextField" destination="I4k-pZ-Ljr" id="mav-zi-qX6"/>
-                        <segue destination="wao-j1-aBD" kind="show" id="l8v-yR-iJM"/>
+                        <segue destination="wao-j1-aBD" kind="presentation" id="l8v-yR-iJM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agi-Gu-fqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -426,7 +440,7 @@
         <scene sceneID="ua5-t4-HcZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q0a-sG-yMh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="ESi-Au-jhB"/>
+                    <tabBarItem key="tabBarItem" tag="1" systemItem="topRated" id="ESi-Au-jhB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rvl-WM-04e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -455,5 +469,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ESz-yO-7iB"/>
+        <segue reference="d9w-6P-MFu"/>
     </inferredMetricsTieBreakers>
 </document>
