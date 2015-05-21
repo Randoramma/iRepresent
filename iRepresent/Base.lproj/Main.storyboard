@@ -174,10 +174,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="oXy-1z-wNN">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" style="done" id="c3Z-ua-KlB">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New" style="done" id="SAU-HC-84b">
                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="HRL-e8-XR8" kind="presentation" identifier="segueToNewDetail" id="d9w-6P-MFu"/>
+                                <segue destination="HRL-e8-XR8" kind="show" id="dSo-Kt-25B"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -472,6 +475,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ESz-yO-7iB"/>
-        <segue reference="B7b-QC-pFo"/>
+        <segue reference="dSo-Kt-25B"/>
     </inferredMetricsTieBreakers>
 </document>

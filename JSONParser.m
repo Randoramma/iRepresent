@@ -27,10 +27,10 @@
     NSArray *dataArray = userIssueDictionary[@"data"];
     for (NSDictionary *issueElements in dataArray) {
       Issue *theIssue = [[Issue alloc] init];
+      theIssue.issue_id = issueElements[@"issue_id"]; 
       theIssue.author_id = [issueElements[@"author_id"] integerValue];
       theIssue.title = issueElements[@"title"];
       theIssue.content = issueElements[@"content"];
-      //      NSDictionary *voteElement = issueElements[@"votes"];
       theIssue.upVotes = [issueElements[@"votes_up"] integerValue];
       theIssue.downVotes = [issueElements[@"votes_down"] integerValue];
       theIssue.theDate = issueElements[@"date_created"];

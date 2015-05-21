@@ -67,6 +67,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   FeedTableViewCell *theCell = [tableView dequeueReusableCellWithIdentifier:@"feedNib"];
   Issue *theIssue = self.issues[indexPath.row];
+  
   theCell.myMainLabelForCell.text = theIssue.title;
   theCell.myTextViewForCell.text = theIssue.content;
   theCell.myDateForCell.text = theIssue.theDate;
@@ -93,12 +94,23 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([segue isEqual:@"segueToNewDetail"]) {
     // pass an empty issue object to detail controller.
+
     
     
     
   }else if ([segue isEqual:@"segueToDetail"]) {
     // pass a completed issue object to detail controller.
-    
+    NSIndexPath *theIndexPath = [self.tableView indexPathForSelectedRow];
+    int theRow = [theIndexPath row];
+    DetailViewController *detailVCFromIssue = [[DetailViewController alloc] init];
+    detailVCFromIssue.selectedIssue = self.issues[theRow];
+    [self.navigationController pushViewController:detailVCFromIssue animated:true];
+  
+  }else if ([segue isEqual:@"segueToDetail"]) {
+    DetailViewController *detailVCForNewIssue = [[DetailViewController alloc] init];
+    Issue *newIssue = [[Issue alloc] init];
+    detailVCForNewIssue.selectedIssue = newIssue;
+    [self.navigationController pushViewController:detailVCForNewIssue animated:true];
     
     
   }else {
@@ -110,7 +122,7 @@
   NSString *token = @"";
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   [userDefaults setObject:token forKey:@"token"];
-  
+# warning Get back to root view controller.
 //  [self performSegueWithIdentifier:self sender:<#(id)#>]
 }
 @end
