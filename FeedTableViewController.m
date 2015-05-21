@@ -25,21 +25,20 @@
   self.tableView.delegate = self;
   self.tableView.dataSource = self;
   self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStyleDone target:self action:@selector(pushDetail)];
-   self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleDone target:self action:@selector(logout)];
+  self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleDone target:self action:@selector(logout)];
   
   
   // determining which tab-bar button we selected to determine the sort functionality we want.
   if (self.view.tag == 1) {
     self.feedFormat = @"sort=newest";
     self.navigationItem.title = @"Newest Issues";
-    self.title = @"Newest Issuesj";
   } else if (self.view.tag == 2) {
     self.feedFormat = @"sort=popular";
     self.navigationItem.title = @"Popular Issues";
   }
   
   [iRepresentAPIService feedRequestwithSortFormat:self.feedFormat completionHandler:^(NSArray *items, NSString *error) {
-    #warning reenable if the server works.  Then delete jerryRig.
+#warning reenable if the server works.  Then delete jerryRig.
     if (!error) {
       //self.issues = items;
       NSLog(@"we got to the Feed Table View");
@@ -80,21 +79,38 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
-  // self performSegueWithIdentifier:@"segueToDetail" sender:[indexPath.row];
-  
 } // didSelectRowAtIndexPath
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//
-//  if (segue isEqual:@"segueToDetail") {
-//
-//
-//
+//override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//  if segue.identifier == "ShowWeb" {
+//    let destination = segue.destinationViewController as! WebViewController
+//    let indexPath = self.tableView.indexPathForSelectedRow()
+//    let repo = self.results[indexPath!.row]
+//    destination.selectedRepo = repo
 //  }
-//
-//
 //}
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue isEqual:@"segueToNewDetail"]) {
+    // pass an empty issue object to detail controller.
+    
+    
+    
+  }else if ([segue isEqual:@"segueToDetail"]) {
+    // pass a completed issue object to detail controller.
+    
+    
+    
+  }else {
+    NSLog(@"non-labeled segue was chosen.");
+  }
+} // prepareForSegue
 
-
+-(void) logout {
+  NSString *token = @"";
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  [userDefaults setObject:token forKey:@"token"];
+  
+//  [self performSegueWithIdentifier:self sender:<#(id)#>]
+}
 @end

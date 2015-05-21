@@ -134,6 +134,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="29Q-oC-V26">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" style="done" id="WPC-YQ-LDo">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="New" style="done" id="cXh-IQ-MpE">
                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -469,6 +472,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ESz-yO-7iB"/>
-        <segue reference="d9w-6P-MFu"/>
+        <segue reference="B7b-QC-pFo"/>
     </inferredMetricsTieBreakers>
 </document>
