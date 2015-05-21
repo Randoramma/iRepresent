@@ -33,21 +33,14 @@
       //      NSDictionary *voteElement = issueElements[@"votes"];
       theIssue.upVotes = [issueElements[@"votes_up"] integerValue];
       theIssue.downVotes = [issueElements[@"votes_down"] integerValue];
-      
-      NSString *tempDate = issueElements[@"date_created"];
-      NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-      theIssue.theDate = [dateFormatter dateFromString:tempDate];
+      theIssue.theDate = issueElements[@"date_created"];
       [theIssues addObject:theIssue];
-      
-      NSLog(@"the issue title is %@", theIssue.title);
     } // for in dataArray
     
   } // if(!theError)
   else {
     NSLog(@"%@", theError.localizedDescription);
   }
-  
-  
   return theIssues;
 }
 
@@ -68,6 +61,8 @@
   
   return theKey;
 }
+
+
 
 
 @end

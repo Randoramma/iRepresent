@@ -126,9 +126,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RNR-SD-Xt1" id="8kU-76-zt4">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="HRL-e8-XR8" kind="show" id="Ziu-Jf-guI"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -137,6 +134,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="29Q-oC-V26"/>
+                    <connections>
+                        <segue destination="HRL-e8-XR8" kind="show" identifier="segueToDetail" id="B7b-QC-pFo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dW-dZ-IEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

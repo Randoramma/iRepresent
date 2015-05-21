@@ -23,6 +23,6 @@
 @property (strong, nonatomic)NSString *content;
 @property (assign, nonatomic)NSInteger upVotes;
 @property (assign, nonatomic)NSInteger downVotes;
-@property (strong, nonatomic)NSDate *theDate;
+@property (strong, nonatomic)NSString *theDate;
 
 @end

@@ -15,4 +15,6 @@
 +(void) userLogin: (NSString *)theEmail withPassword:(NSString *)thePassword response:(void (^) (BOOL success))completionHandler;
 
 +(void) feedRequestwithSortFormat: (NSString *)sortFormat completionHandler:(void (^) (NSArray* items, NSString *error))completionHandler;
+
++(NSArray *) jerryRig;
 @end
