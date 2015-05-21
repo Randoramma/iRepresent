@@ -14,7 +14,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvk-lk-dUY" userLabel="Title Label">
-                        <rect key="frame" x="10" y="10" width="42" height="20"/>
+                        <rect key="frame" x="10" y="10" width="260" height="20"/>
                         <attributedString key="attributedText">
                             <fragment content="Label">
                                 <attributes>
@@ -27,7 +27,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etg-UI-xR4" userLabel="Down 100">
-                        <rect key="frame" x="83" y="56" width="21" height="14"/>
+                        <rect key="frame" x="89" y="56" width="21" height="14"/>
                         <attributedString key="attributedText">
                             <fragment content="100">
                                 <attributes>
@@ -50,8 +50,8 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D90-9a-gDw">
-                        <rect key="frame" x="238" y="10" width="32" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D90-9a-gDw">
+                        <rect key="frame" x="272" y="10" width="32" height="18"/>
                         <attributedString key="attributedText">
                             <fragment content="Date">
                                 <attributes>
@@ -81,10 +81,11 @@
                     </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="D90-9a-gDw" firstAttribute="leading" secondItem="Tvk-lk-dUY" secondAttribute="trailing" constant="2" id="12V-Tg-g7y"/>
                     <constraint firstItem="KGe-P9-ESb" firstAttribute="bottom" secondItem="etg-UI-xR4" secondAttribute="bottom" id="2i1-Nb-UHr"/>
                     <constraint firstItem="Tvk-lk-dUY" firstAttribute="leading" secondItem="Eth-he-NrX" secondAttribute="leadingMargin" constant="2" id="Amv-65-H5s"/>
                     <constraint firstItem="KGe-P9-ESb" firstAttribute="bottom" secondItem="hFw-cW-s7w" secondAttribute="bottom" id="QI3-Ny-fof"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="D90-9a-gDw" secondAttribute="trailing" constant="42" id="Qgu-gm-Vt2"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="D90-9a-gDw" secondAttribute="trailing" constant="8" id="Qgu-gm-Vt2"/>
                     <constraint firstItem="D90-9a-gDw" firstAttribute="top" secondItem="Eth-he-NrX" secondAttribute="topMargin" constant="2" id="aQD-yF-aXr"/>
                     <constraint firstItem="RiR-Ah-QBd" firstAttribute="leading" secondItem="Eth-he-NrX" secondAttribute="leadingMargin" constant="2" id="hNf-Zz-KZy"/>
                     <constraint firstItem="RiR-Ah-QBd" firstAttribute="top" secondItem="Eth-he-NrX" secondAttribute="topMargin" constant="32" id="hTn-em-Dtn"/>
@@ -92,7 +93,7 @@
                     <constraint firstItem="Tvk-lk-dUY" firstAttribute="top" secondItem="Eth-he-NrX" secondAttribute="topMargin" constant="2" id="qql-Qb-H1A"/>
                     <constraint firstItem="KGe-P9-ESb" firstAttribute="bottom" secondItem="RiR-Ah-QBd" secondAttribute="bottom" id="s4d-k8-3fa"/>
                     <constraint firstItem="KGe-P9-ESb" firstAttribute="leading" secondItem="RiR-Ah-QBd" secondAttribute="trailing" constant="16" id="vlc-Lt-LRA"/>
-                    <constraint firstItem="etg-UI-xR4" firstAttribute="leading" secondItem="hFw-cW-s7w" secondAttribute="trailing" constant="22" id="wHL-o4-ykP"/>
+                    <constraint firstItem="etg-UI-xR4" firstAttribute="leading" secondItem="hFw-cW-s7w" secondAttribute="trailing" constant="28" id="wHL-o4-ykP"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
