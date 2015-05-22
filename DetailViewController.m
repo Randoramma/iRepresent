@@ -10,7 +10,7 @@
 #import "Issue.h"
 #import "iRepresentAPIService.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () <UITextFieldDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UIButton *agreeButton;
 @property (weak, nonatomic) IBOutlet UIButton *disagreeButton;
@@ -25,22 +25,35 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  self.titleTextField.delegate = self;
+  self.contentTextView.delegate = self;
+  
+//  UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"iRepresent Background"]];
+//  
+//  [self.view addSubview:backgroundImage];
+//  [self.view sendSubviewToBack:backgroundImage];
+//  [self.view setAlpha:0.2];
+//  
+//  [[self view] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"iRepresent Background"]]];
   // check to see what kind of issue was sent over.
   if (self.selectedIssue) {
     // set title
-//    self.selectedIssue.identity = @"555b9eddea8274030048acae"; 
     self.title = self.selectedIssue.title;
     self.titleTextField.text = self.selectedIssue.title;
-    self.contentTextView.text = self.selectedIssue.content; 
+    self.contentTextView.text = self.selectedIssue.content;
+    self.upLabel.text = [NSString stringWithFormat:@"%ld", (long)self.selectedIssue.upVotes];
+    self.downLabel.text = [NSString stringWithFormat:@"%ld", (long)self.selectedIssue.downVotes];
     
   } else {
     self.title = @"new";
     //    self.titleTextField.text = @"new";
     self.disagreeButton.hidden = true;
+    self.upLabel.text = @"0";
+    self.downLabel.text = @"0";
   }
 }
 
-
+#pragma - mark Buttons
 - (IBAction)agreePressed:(id)sender {
   NSLog(@"%@", self.selectedIssue.identity);
   // for new issue
@@ -66,10 +79,12 @@
 } // agreePressed
 
 - (IBAction)disagreePressed:(id)sender {
-  
+  [iRepresentAPIService voteWithString:self.selectedIssue.identity withVote:@"yes"];
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thank you for voting!" message:@"You have successfully voted." delegate:self cancelButtonTitle:@"Back." otherButtonTitles: nil];
+  [alertView show];
 }
 
-
+#pragma - mark Mail
 - (void) sendEmail {
   // Email Subject
   NSString *emailTitle = [NSString stringWithFormat:@"Your local constituent cares about: %@", self.titleTextField.text];
@@ -90,9 +105,6 @@
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-  
-  
-  
   switch (result)
   {
     case MFMailComposeResultCancelled:
@@ -110,24 +122,34 @@
     default:
       break;
   }
-  
-  
   // Close the Mail Interface
   [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+#pragma - mark TextField
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+  if (textField == self.titleTextField) {
+    [self.contentTextView resignFirstResponder];
+  }
+  return true;
+}
+
+-(BOOL)textViewShouldReturn:(UITextView *)textView {
+  if (textView == self.contentTextView) {
+    [self.contentTextView resignFirstResponder];
+  }
+  return true;
+  
+}
+
+- (void)refresh:(NSNotification *)notification
+{
+  [self.view setNeedsLayout];
 }
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

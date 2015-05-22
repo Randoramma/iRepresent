@@ -10,13 +10,6 @@
 
 @interface FeedTableViewCell ()
 
-//@property (weak, nonatomic) IBOutlet UILabel *feedCellTitleLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *feedCellBodyLabel;
-//@property (weak, nonatomic) IBOutlet UIImageView *feedCellUpTriangle;
-//@property (weak, nonatomic) IBOutlet UIImageView *feedCellDownController;
-//@property (weak, nonatomic) IBOutlet UILabel *feedCellUpCount;
-//@property (weak, nonatomic) IBOutlet UILabel *feedCellDownCount;
-
 @end
 
 @implementation FeedTableViewCell

@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (strong, nonatomic) NSString *myKey;
+@property (strong,nonatomic) UIDynamicAnimator *animator;
 
 @end
 
@@ -23,16 +24,19 @@
 @implementation LoginScreenViewController
 
 -(void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:true];
   self.emailTextField.delegate = self;
   self.passwordTextField.delegate = self;
   
   
 } // viewDidAppear
 -(void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:true];
   [self.navigationController setNavigationBarHidden:YES animated:YES];
 } // viewWillAppear
 
 -(void)viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:true];
   [self.navigationController setNavigationBarHidden:NO animated:YES];
 } // viewWillDisappear
 
@@ -71,10 +75,5 @@
   }
   return true;
 }
-//
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//  
-//  
-//}
 
 @end
