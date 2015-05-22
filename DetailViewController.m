@@ -71,7 +71,7 @@
 } // agreePressed
 
 - (IBAction)disagreePressed:(id)sender {
-  [iRepresentAPIService voteWithString:self.selectedIssue.identity withVote:@"yes"];
+  [iRepresentAPIService voteWithString:self.selectedIssue.identity withVote:@"no"];
   UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thank you for voting!" message:@"You have successfully voted." delegate:self cancelButtonTitle:@"Back." otherButtonTitles: nil];
   [alertView show];
 }
