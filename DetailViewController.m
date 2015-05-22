@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "Issue.h"
 #import "iRepresentAPIService.h"
+#import "FeedTableViewController.h"
 
 @interface DetailViewController () <UITextFieldDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;

@@ -509,8 +509,8 @@
         <image name="iRepresent Background" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="aIB-DN-w43"/>
         <segue reference="ESz-yO-7iB"/>
-        <segue reference="bLh-xr-tIC"/>
-        <segue reference="D9C-pI-cSd"/>
+        <segue reference="rqd-SJ-Nf4"/>
     </inferredMetricsTieBreakers>
 </document>

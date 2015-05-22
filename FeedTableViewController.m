@@ -38,6 +38,21 @@
     self.navigationItem.title = @"Popular Issues";
   }
   
+//  [iRepresentAPIService feedRequestwithSortFormat:self.feedFormat completionHandler:^(NSArray *items, NSString *error) {
+//    if (!error) {
+//      self.issues = items;
+//    } else {
+//      NSLog(@"Feed response error is: %@", error);
+//    }
+//    [self.tableView reloadData];
+//  }];
+  
+  UINib *cellNib = [UINib nibWithNibName:@"FeedCell" bundle:nil];
+  [self.tableView registerNib:cellNib forCellReuseIdentifier:@"feedNib"];
+  
+} // viewDidLoad
+
+-(void)viewWillAppear:(BOOL)animated {
   [iRepresentAPIService feedRequestwithSortFormat:self.feedFormat completionHandler:^(NSArray *items, NSString *error) {
     if (!error) {
       self.issues = items;
@@ -47,12 +62,6 @@
     [self.tableView reloadData];
   }];
   
-  UINib *cellNib = [UINib nibWithNibName:@"FeedCell" bundle:nil];
-  [self.tableView registerNib:cellNib forCellReuseIdentifier:@"feedNib"];
-  
-} // viewDidLoad
-
--(void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:true];
   if (self.view.tag == 1) {
     [self.tableView reloadData];
@@ -63,7 +72,6 @@
     self.feedFormat = @"sort=popular";
     self.navigationItem.title = @"Popular Issues";
   }
-//  [self.tableView reloadData];
 }
 
 #pragma mark - TableView
