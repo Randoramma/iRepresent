@@ -27,15 +27,6 @@
   
   self.titleTextField.delegate = self;
   self.contentTextView.delegate = self;
-  
-//  UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"iRepresent Background"]];
-//  
-//  [self.view addSubview:backgroundImage];
-//  [self.view sendSubviewToBack:backgroundImage];
-//  [self.view setAlpha:0.2];
-//  
-//  [[self view] setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"iRepresent Background"]]];
-  // check to see what kind of issue was sent over.
   if (self.selectedIssue) {
     // set title
     self.title = self.selectedIssue.title;
@@ -129,18 +120,22 @@
 #pragma - mark TextField
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
   if (textField == self.titleTextField) {
-    [self.contentTextView resignFirstResponder];
+    [self.titleTextField resignFirstResponder];
   }
   return true;
 }
 
--(BOOL)textViewShouldReturn:(UITextView *)textView {
-  if (textView == self.contentTextView) {
-    [self.contentTextView resignFirstResponder];
-  }
-  return true;
+// to resign the text view.
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
   
+  if([text isEqualToString:@"\n"]) {
+    [textView resignFirstResponder];
+    return NO;
+  }
+  
+  return YES;
 }
+
 
 - (void)refresh:(NSNotification *)notification
 {
