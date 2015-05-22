@@ -30,7 +30,6 @@
   [super viewDidLoad];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh:) name:@"RefreshMasterNotification" object:nil];
   
-  
   // determining which tab-bar button we selected to determine the sort functionality we want.
   if (self.view.tag == 1) {
     self.feedFormat = @"sort=newest";
@@ -55,7 +54,17 @@
 } // viewDidLoad
 
 -(void)viewWillAppear:(BOOL)animated {
-  [self.tableView reloadData];
+  [super viewWillAppear:true];
+  if (self.view.tag == 1) {
+    [self.tableView reloadData];
+    self.feedFormat = @"sort=newest";
+    self.navigationItem.title = @"Newest Issues";
+  } else if (self.view.tag == 2) {
+    [self.tableView reloadData];
+    self.feedFormat = @"sort=popular";
+    self.navigationItem.title = @"Popular Issues";
+  }
+//  [self.tableView reloadData];
 }
 
 #pragma mark - TableView
@@ -73,6 +82,8 @@
   theCell.myTextViewForCell.text = theIssue.content;
   theCell.myUpCountForCell.text = [NSString stringWithFormat:@"%ld",(long)theIssue.upVotes];
   theCell.myDownCountForCell.text = [NSString stringWithFormat:@"%ld", (long)theIssue.downVotes];
+  
+  theCell.myTextViewForCell.userInteractionEnabled = NO;
   
   return theCell;
 } // cellForRowAtIndexPath
@@ -99,8 +110,7 @@
     
   }else if ([segue.identifier isEqual:@"logout"]) {
     // here I want to return to the root VC.
-    // setup up a public method in the app delegate that sets the rootView controller in the window.  Call
-    // that here when you zero out the key.
+    [self logout]; 
     
   }else {
     NSLog(@"non-labeled segue was chosen.");
@@ -112,7 +122,10 @@
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   [userDefaults setObject:token forKey:@"token"];
 # warning Get back to root view controller.
-  //  [self performSegueWithIdentifier:self sender:<#(id)#>]
+  NSArray *viewControllers = self.navigationController.viewControllers;
+  UIViewController *rootViewController = [viewControllers objectAtIndex:0];
+  [self.navigationController pushViewController:rootViewController animated:true]; 
+  
 }
 
 - (void)refresh:(NSNotification *)notification

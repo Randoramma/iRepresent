@@ -22,7 +22,7 @@
 @implementation NewUserViewController
 
 -(void)viewDidLoad {
-  
+  [super viewDidLoad];
   self.userEmailTextField.delegate = self;
   self.userPasswordTextField.delegate = self;
   self.userUsernameTextField.delegate = self;
