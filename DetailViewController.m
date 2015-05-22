@@ -28,10 +28,11 @@
   // check to see what kind of issue was sent over.
   if (self.selectedIssue) {
     // set title
-//    self.selectedIssue.identity = @"555b9eddea8274030048acae"; 
     self.title = self.selectedIssue.title;
     self.titleTextField.text = self.selectedIssue.title;
-    self.contentTextView.text = self.selectedIssue.content; 
+    self.contentTextView.text = self.selectedIssue.content;
+    self.upLabel.text = [NSString stringWithFormat:@"%ld", (long)self.selectedIssue.upVotes];
+    self.downLabel.text = [NSString stringWithFormat:@"%ld", (long)self.selectedIssue.downVotes];
     
   } else {
     self.title = @"new";
@@ -66,7 +67,9 @@
 } // agreePressed
 
 - (IBAction)disagreePressed:(id)sender {
-  
+  [iRepresentAPIService voteWithString:self.selectedIssue.identity withVote:@"yes"];
+  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thank you for voting!" message:@"You have successfully voted." delegate:self cancelButtonTitle:@"Back." otherButtonTitles: nil];
+  [alertView show];
 }
 
 

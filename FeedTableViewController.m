@@ -24,8 +24,11 @@
 -(void)viewDidLoad {
   self.tableView.delegate = self;
   self.tableView.dataSource = self;
-  self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStyleDone target:self action:@selector(pushDetail)];
+  //  self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStyleDone target:self action:@selector(pushDetail)];
   self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleDone target:self action:@selector(logout)];
+  
+  [super viewDidLoad];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh:) name:@"RefreshMasterNotification" object:nil];
   
   
   // determining which tab-bar button we selected to determine the sort functionality we want.
@@ -40,13 +43,12 @@
   [iRepresentAPIService feedRequestwithSortFormat:self.feedFormat completionHandler:^(NSArray *items, NSString *error) {
     if (!error) {
       self.issues = items;
-      NSLog(@"we got to the Feed Table View");
     } else {
       NSLog(@"Feed response error is: %@", error);
     }
     [self.tableView reloadData];
   }];
-
+  
   UINib *cellNib = [UINib nibWithNibName:@"FeedCell" bundle:nil];
   [self.tableView registerNib:cellNib forCellReuseIdentifier:@"feedNib"];
   
@@ -84,7 +86,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([segue.identifier isEqual:@"segueToNewDetail"]) {
     // pass an empty issue object to detail controller.
-    DetailViewController *newDetail = (DetailViewController*)segue.destinationViewController;
+     DetailViewController *newDetail = (DetailViewController*)segue.destinationViewController;
     // send issue over
   }else if ([segue.identifier isEqual:@"segueToDetail"]) {
     // pass a completed issue object to detail controller.
@@ -93,12 +95,12 @@
     DetailViewController *newDetail = (DetailViewController*)segue.destinationViewController;
     newDetail.selectedIssue = self.issues[theRow];
     
-//    [self.navigationController pushViewController:detailVCFromIssue animated:true];
-  
+    //    [self.navigationController pushViewController:detailVCFromIssue animated:true];
+    
   }else if ([segue.identifier isEqual:@"logout"]) {
     // here I want to return to the root VC.
     // setup up a public method in the app delegate that sets the rootView controller in the window.  Call
-    // that here when you zero out the key.  
+    // that here when you zero out the key.
     
   }else {
     NSLog(@"non-labeled segue was chosen.");
@@ -110,6 +112,11 @@
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   [userDefaults setObject:token forKey:@"token"];
 # warning Get back to root view controller.
-//  [self performSegueWithIdentifier:self sender:<#(id)#>]
+  //  [self performSegueWithIdentifier:self sender:<#(id)#>]
+}
+
+- (void)refresh:(NSNotification *)notification
+{
+  [self.tableView reloadData];
 }
 @end
