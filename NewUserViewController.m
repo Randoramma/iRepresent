@@ -49,6 +49,8 @@
   [self.userEmailTextField resignFirstResponder];
 } // dismissKeyboard
 
+
+#pragma -mark Text Field
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
   if (textField == self.userEmailTextField) {
     [self.userEmailTextField resignFirstResponder];
