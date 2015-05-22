@@ -86,7 +86,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([segue.identifier isEqual:@"segueToNewDetail"]) {
     // pass an empty issue object to detail controller.
-     DetailViewController *newDetail = (DetailViewController*)segue.destinationViewController;
+    // DetailViewController *newDetail = (DetailViewController*)segue.destinationViewController;
     // send issue over
   }else if ([segue.identifier isEqual:@"segueToDetail"]) {
     // pass a completed issue object to detail controller.

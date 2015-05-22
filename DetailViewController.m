@@ -118,6 +118,11 @@
   // Close the Mail Interface
   [self dismissViewControllerAnimated:YES completion:NULL];
 }
+
+- (void)refresh:(NSNotification *)notification
+{
+  [self.view setNeedsLayout];
+}
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
