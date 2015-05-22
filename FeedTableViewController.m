@@ -24,7 +24,6 @@
 -(void)viewDidLoad {
   self.tableView.delegate = self;
   self.tableView.dataSource = self;
-  //  self.tabBarController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStyleDone target:self action:@selector(pushDetail)];
   self.tabBarController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleDone target:self action:@selector(logout)];
   
   [super viewDidLoad];

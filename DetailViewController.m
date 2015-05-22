@@ -32,12 +32,12 @@
     self.title = self.selectedIssue.title;
     self.titleTextField.text = self.selectedIssue.title;
     self.contentTextView.text = self.selectedIssue.content;
+    self.contentTextView.userInteractionEnabled = NO;
     self.upLabel.text = [NSString stringWithFormat:@"%ld", (long)self.selectedIssue.upVotes];
     self.downLabel.text = [NSString stringWithFormat:@"%ld", (long)self.selectedIssue.downVotes];
     
   } else {
     self.title = @"new";
-    //    self.titleTextField.text = @"new";
     self.disagreeButton.hidden = true;
     self.upLabel.text = @"0";
     self.downLabel.text = @"0";
