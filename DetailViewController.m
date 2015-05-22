@@ -93,9 +93,6 @@
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-  
-  
-  
   switch (result)
   {
     case MFMailComposeResultCancelled:
@@ -122,6 +119,23 @@
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
 }
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+  if (textField == self.titleTextField) {
+    [self.titleTextField resignFirstResponder];
+  }
+  return true;
+}
+
+-(BOOL)textViewShouldReturn:(UITextView *)textView {
+  if (textView == self.contentTextView) {
+    [self.contentTextView resignFirstResponder];
+  }
+  return true;
+}
+
+
+
 
 /*
  #pragma mark - Navigation
