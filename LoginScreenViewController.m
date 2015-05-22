@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (strong, nonatomic) NSString *myKey;
+@property (strong,nonatomic) UIDynamicAnimator *animator;
 
 @end
 
