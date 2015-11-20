@@ -50,7 +50,7 @@
 
 +(void) userLogin: (NSString *)theEmail withPassword:(NSString *)thePassword response:(void (^) (BOOL success)) completionHandler {
   
-  NSString *baseURL = [NSString stringWithFormat:@"http://irepresent.herokuapp.com"];
+  NSString *baseURL = [NSString stringWithFormat:@"https://irepresent.herokuapp.com"];
   NSString *theHTTPString = [NSString stringWithFormat:@"%@/sign_in", baseURL];
   AFHTTPRequestOperationManager *manager= [AFHTTPRequestOperationManager manager];
   
@@ -74,7 +74,7 @@
 
 +(void) feedRequestwithSortFormat: (NSString *)sortFormat completionHandler:(void (^) (NSArray* items, NSString *error))completionHandler {
   
-  NSString *baseURL = [NSString stringWithFormat:@"http://irepresent.herokuapp.com"];
+  NSString *baseURL = [NSString stringWithFormat:@"https://irepresent.herokuapp.com"];
   NSString *theHTTPString = [NSString stringWithFormat:@"%@/issues?%@", baseURL, sortFormat];
   AFHTTPRequestOperationManager *manager= [AFHTTPRequestOperationManager manager];
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];

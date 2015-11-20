@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *myUpTriangleForCell;
 @property (weak, nonatomic) IBOutlet UITextView *myTextViewForCell;
 @property (weak, nonatomic) IBOutlet UILabel *myDateForCell;
+@property (weak, nonatomic) IBOutlet UIView *background;
 
 @end

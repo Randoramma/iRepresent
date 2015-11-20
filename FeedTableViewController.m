@@ -82,7 +82,6 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   FeedTableViewCell *theCell = [tableView dequeueReusableCellWithIdentifier:@"feedNib"];
   Issue *theIssue = self.issues[indexPath.row];
-  
   theCell.myMainLabelForCell.text = theIssue.title;
   theCell.myTextViewForCell.text = theIssue.content;
   theCell.myDateForCell.text = theIssue.theDate;
@@ -91,6 +90,9 @@
   theCell.myDownCountForCell.text = [NSString stringWithFormat:@"%ld", (long)theIssue.downVotes];
   
   theCell.myTextViewForCell.userInteractionEnabled = NO;
+  
+  UIImage *backgroundImage = [UIImage imageNamed:@"Cell Background"];
+  theCell.background.backgroundColor= [UIColor colorWithPatternImage:backgroundImage];
   
   return theCell;
 } // cellForRowAtIndexPath
