@@ -22,6 +22,11 @@
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
   NSString *myKey = [userDefaults stringForKey:@"token"];
   NSLog(@"theAppDelegate Found this Token:%@", myKey);
+  self.window.tintColor = [UIColor whiteColor];
+  
+  if([UINavigationBar conformsToProtocol:@protocol(UIAppearanceContainer)]) {
+    [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+  }
   
   return YES;
 }

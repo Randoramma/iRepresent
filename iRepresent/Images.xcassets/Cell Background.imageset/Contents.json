@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Agree.png",
+      "filename" : "TableView Cell.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Agree@2x.png",
+      "filename" : "TableView Cell@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Agree@3x.png",
+      "filename" : "TableView Cell@3x.png",
       "scale" : "3x"
     }
   ],

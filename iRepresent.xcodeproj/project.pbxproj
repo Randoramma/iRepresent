@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D02F5ED91BFE8B3A00A71511 /* NavController.m in Sources */ = {isa = PBXBuildFile; fileRef = D02F5ED81BFE8B3A00A71511 /* NavController.m */; };
 		D07372EF1B0AD9DB009C4F9C /* post-issues-success.json in Resources */ = {isa = PBXBuildFile; fileRef = D07372EA1B0AD9DB009C4F9C /* post-issues-success.json */; };
 		D07372F01B0AD9DB009C4F9C /* post-users-fail.json in Resources */ = {isa = PBXBuildFile; fileRef = D07372EB1B0AD9DB009C4F9C /* post-users-fail.json */; };
 		D07372F11B0AD9DB009C4F9C /* post-users-success.json in Resources */ = {isa = PBXBuildFile; fileRef = D07372EC1B0AD9DB009C4F9C /* post-users-success.json */; };
@@ -43,6 +44,8 @@
 /* Begin PBXFileReference section */
 		0E6E4CBB8EA33E7EB6D150EE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		767822F290D8A9E91438035A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D02F5ED71BFE8B3A00A71511 /* NavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavController.h; sourceTree = "<group>"; };
+		D02F5ED81BFE8B3A00A71511 /* NavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavController.m; sourceTree = "<group>"; };
 		D07372EA1B0AD9DB009C4F9C /* post-issues-success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "post-issues-success.json"; sourceTree = "<group>"; };
 		D07372EB1B0AD9DB009C4F9C /* post-users-fail.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "post-users-fail.json"; sourceTree = "<group>"; };
 		D07372EC1B0AD9DB009C4F9C /* post-users-success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "post-users-success.json"; sourceTree = "<group>"; };
@@ -188,6 +191,8 @@
 				D07372F31B0ADAF9009C4F9C /* Issue.m */,
 				D0EDBE731B0A3CD7009DAF2F /* JSONParser.h */,
 				D0EDBE741B0A3CD7009DAF2F /* JSONParser.m */,
+				D02F5ED71BFE8B3A00A71511 /* NavController.h */,
+				D02F5ED81BFE8B3A00A71511 /* NavController.m */,
 				D08756C31B07B569007E6392 /* AppDelegate.h */,
 				D08756C41B07B569007E6392 /* AppDelegate.m */,
 				D0EDBE6C1B0A3B45009DAF2F /* Oauth.h */,
@@ -270,7 +275,7 @@
 		D08756B41B07B569007E6392 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Randy McLain";
 				TargetAttributes = {
 					D08756BB1B07B569007E6392 = {
@@ -373,6 +378,7 @@
 				D0EDBE751B0A3CD7009DAF2F /* JSONParser.m in Sources */,
 				D0EDBE681B0A3B04009DAF2F /* FeedTableViewCell.m in Sources */,
 				D07372F41B0ADAF9009C4F9C /* Issue.m in Sources */,
+				D02F5ED91BFE8B3A00A71511 /* NavController.m in Sources */,
 				D0EDBE621B0A3AB7009DAF2F /* NewUserViewController.m in Sources */,
 				D0EDBE651B0A3AD9009DAF2F /* FeedTableViewController.m in Sources */,
 				D07372F71B0ADB72009C4F9C /* iRepresentAPIService.m in Sources */,
@@ -440,6 +446,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -511,6 +518,7 @@
 				INFOPLIST_FILE = iRepresent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RandyMcLain.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -527,6 +535,7 @@
 				INFOPLIST_FILE = iRepresent/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RandyMcLain.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -547,6 +556,7 @@
 				);
 				INFOPLIST_FILE = iRepresentTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RandyMcLain.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iRepresent.app/iRepresent";
 			};
@@ -562,6 +572,7 @@
 				);
 				INFOPLIST_FILE = iRepresentTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RandyMcLain.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iRepresent.app/iRepresent";
 			};
